@@ -1,9 +1,9 @@
-import AboutIntegration from "@/components/AboutIntegration";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import AboutIntegration from "@/components/LayoutFR/AboutIntegration";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
-import DomainIntegration from "@/components/DomainIntegration";
-import NosIntegrations from "@/components/NosIntegrations";
+import DomainIntegration from "@/components/LayoutFR/DomainIntegration";
+import NosIntegrations from "@/components/LayoutFR/NosIntegrations";
 
 export const metadata: Metadata = {
   title: "Intégration | DATALYS Consulting",
@@ -19,7 +19,7 @@ const AboutPage = () => {
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       />
       <AboutIntegration />
-      <DomainIntegration />
+      {/* <DomainIntegration /> */}
       <NosIntegrations />
     </>
   );

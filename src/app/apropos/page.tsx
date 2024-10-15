@@ -1,6 +1,6 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import AboutSectionOne from "@/components/LayoutFR/About/AboutSectionOne";
+import AboutSectionFour from "@/components/LayoutFR/About/AboutSectionFour";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
 
@@ -17,7 +17,7 @@ const AboutPage = () => {
         pageName="A propos de nous"
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       />
-      <AboutSectionTwo />
+      <AboutSectionFour />
       <AboutSectionOne />
     </>
   );

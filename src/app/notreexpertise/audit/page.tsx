@@ -1,7 +1,7 @@
-import DomainSection from "@/components/DomainSection";
-import AboutAudit from "@/components/AboutAudit";
-import RayonIntervention from "@/components/RayonIntervention";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import DomainSection from "@/components/LayoutFR/DomainSection";
+import AboutAudit from "@/components/LayoutFR/AboutAudit";
+import RayonIntervention from "@/components/LayoutFR/RayonIntervention";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
 

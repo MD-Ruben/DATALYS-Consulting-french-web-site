@@ -1,9 +1,7 @@
 "use client";
-
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
-import "node_modules/react-modal-video/css/modal-video.css";
+import Footer from "@/components/LayoutFR/Footer";
+import Header from "@/components/LayoutFR/Header";
+import ScrollToTop from "@/components/LayoutFR/ScrollToTop";
 import "../styles/index.css";
 
 export default function RootLayout({

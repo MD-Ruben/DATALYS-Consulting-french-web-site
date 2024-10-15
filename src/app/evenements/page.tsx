@@ -1,7 +1,7 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
+import Events from "@/components/LayoutFR/Events";
 
 import { Metadata } from "next";
-import Events from "@/components/Events";
 
 export const metadata: Metadata = {
   title: "Evénement | DATALYS Consulting",

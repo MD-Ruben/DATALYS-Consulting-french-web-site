@@ -1,9 +1,9 @@
-import ModuleFormations from "@/components/ModuleFormations";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import ModuleFormations from "@/components/LayoutFR/ModuleFormations";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
-import AboutFormations from "@/components/AboutFormations";
-import DomainFormations from "@/components/DomainFormations";
+import AboutFormations from "@/components/LayoutFR/AboutFormations";
+import DomainFormations from "@/components/LayoutFR/DomainFormations";
 
 export const metadata: Metadata = {
   title: "Formations | DATALYS Consulting",

@@ -1,12 +1,13 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import OurWorks from "@/components/OurWorks";
-import Brands from "@/components/Brands";
-import ScrollUp from "@/components/Common/ScrollUp";
-import ContactHome from "@/components/ContactHome";
-import Features from "@/components/Features";
-import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
+import AboutSectionOne from "@/components/LayoutFR/About/AboutSectionOne";
+import AboutSectionTwo from "@/components/LayoutFR/About/AboutSectionTwo";
+import OurWorks from "@/components/LayoutFR/OurWorks";
+import Brands from "@/components/LayoutFR/Brands";
+import ScrollUp from "@/components/LayoutFR/Common/ScrollUp";
+import ContactHome from "@/components/LayoutFR/ContactHome";
+import Features from "@/components/LayoutFR/Features";
+import AboutSectionThree from "@/components/LayoutFR/About/AboutSectionThree";
+import Hero from "@/components/LayoutFR/Hero";
+import Testimonials from "@/components/LayoutFR/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,12 +21,13 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      <AboutSectionTwo />
+      <AboutSectionThree />
+      {/* <AboutSectionTwo /> */}
       <AboutSectionOne />
       <Features />
       <OurWorks />
-      <Testimonials />
-      <Brands />
+      {/* <Testimonials /> */}
+      {/* <Brands /> */}
       <ContactHome />
     </>
   );

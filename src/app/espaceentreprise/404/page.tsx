@@ -1,5 +1,5 @@
-import PageNotFound from "@/components/PageNotFound";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import PageNotFound from "@/components/LayoutFR/PageNotFound";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
 

@@ -1,5 +1,8 @@
-import PageNotFound from "@/components/PageNotFound";
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import Footer from "@/components/LayoutFR/Footer";
+import Header from "@/components/LayoutFR/Header";
+import ScrollToTop from "@/components/LayoutFR/ScrollToTop";
+import PageNotFound from "@/components/LayoutFR/PageNotFound";
+import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
 
