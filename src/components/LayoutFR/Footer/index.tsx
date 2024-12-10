@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import { Button } from "@nextui-org/button";
+"use client"
+import Link from "next/link"
+import { Button } from "@nextui-org/button"
 
 const Footer = () => {
   return (
@@ -98,7 +98,7 @@ const Footer = () => {
                       href="/contact"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Siège social <span className="uppercase">Guinée </span>:
+                      Filiale <span className="uppercase">Guinée </span>:
                       Almamyah Rue 028 N°466 COMMUNE DE KALOUM
                     </Link>
                   </li>
@@ -136,7 +136,8 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/espaceentreprise/404"
+                      target="_blank"
+                      href="https://applicationweb.datalysconsulting.com/"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Espace entreprise
@@ -171,7 +172,8 @@ const Footer = () => {
                   <Button
                     className="flex items-center justify-center rounded-xl border-2 dark:border-body-color-dark"
                     as={Link}
-                    href="/boutique"
+                    target="_blank"
+                    href="https://store.datalysconsulting.com/"
                   >
                     {" "}
                     <span className="text-sm !leading-relaxed dark:text-body-color-dark sm:text-base md:text-lg">
@@ -198,12 +200,7 @@ const Footer = () => {
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
               All Rights Reserved by
-              <span className="font-medium"> DATALYS Consulting</span>. Designed
-              and Developed by
-              <Link className="ml-1 hover:text-primary" href="javascript:;">
-                <span className="font-medium"> LA VICTOIRE</span>
-              </Link>
-              .
+              <span className="font-medium"> DATALYS Consulting</span>
             </p>
           </div>
         </div>
@@ -399,7 +396,7 @@ const Footer = () => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -2,6 +2,8 @@
 import Footer from "@/components/LayoutFR/Footer";
 import Header from "@/components/LayoutFR/Header";
 import ScrollToTop from "@/components/LayoutFR/ScrollToTop";
+import { AnimatePresence } from "framer-motion"
+import PageTransition from "@/components/LayoutFR/Transitions/PageTransition"
 import "../styles/index.css";
 
 export default function RootLayout({
@@ -15,7 +17,11 @@ export default function RootLayout({
 
       <body className="bg-black">
         <Header />
-        {children}
+        <AnimatePresence mode="wait">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </AnimatePresence>
         <Footer />
         <ScrollToTop />
       </body>

@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
 import AboutFormations from "@/components/LayoutFR/AboutFormations";
-import DomainFormations from "@/components/LayoutFR/DomainFormations";
+import DomainCourse from "@/components/LayoutFR/DomainCourse";
 
 export const metadata: Metadata = {
   title: "Formations | DATALYS Consulting",
@@ -15,11 +15,11 @@ const AboutPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Formation"
+        pageName="Formation" 
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       />
       <AboutFormations />
-      <DomainFormations />
+      <DomainCourse />
       <ModuleFormations />
     </>
   );

@@ -1,33 +1,44 @@
-"use client";
-import SectionTitle from "../Common/SectionTitle";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { RxAccessibility } from "react-icons/rx";
+"use client"
+import SectionTitle from "../Common/SectionTitle"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { RxAccessibility } from "react-icons/rx"
 
-import Link from "next/link";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
+import Link from "next/link"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/free-mode"
 
-import { FreeMode, Pagination } from "swiper/modules";
+import { motion } from "framer-motion"
 
-import { RxArrowTopRight } from "react-icons/rx";
+import { FreeMode, Pagination, Autoplay } from "swiper/modules"
+
+import { RxArrowTopRight } from "react-icons/rx"
+import { useRef } from "react"
 
 const NosIntegrations = () => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
   return (
     <section className="py-16 md:py-20 lg:py-24">
       <div className="container">
         <div className="mx-auto mb-14 max-w-[560px] text-center">
-          <h2 className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
+          <motion.h2
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]"
+          >
             Ce que nous intégrons
-          </h2>
-          <p className="text-center text-base !leading-relaxed text-body-color md:text-lg">
-            Rechercher de manière dynamique une convergence fiable plutôt que
-            d'améliorer les processus 24 heures sur 24 et 7 jours sur 7.
-            Développer intrinsèquement un service à la clientèle de bout en bout
-            sans disposer d'un grand nombre de données.
-          </p>
+          </motion.h2>
         </div>
-        <div className="flex flex-col items-center justify-center">
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center"
+        >
           <Swiper
             breakpoints={{
               340: {
@@ -39,11 +50,16 @@ const NosIntegrations = () => {
                 spaceBetween: 12,
               },
             }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             freeMode={true}
             pagination={{
               clickable: true,
             }}
-            modules={[FreeMode, Pagination]}
+            modules={[FreeMode, Pagination, Autoplay]}
             className="w-full"
           >
             <SwiperSlide>
@@ -57,7 +73,7 @@ const NosIntegrations = () => {
                 <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                 <div className="relative flex flex-col gap-3">
                   <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                  <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                  {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                   <p className="lg:text-[18px]">Cloud</p>
                 </div>
                 <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -75,7 +91,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Data center</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -94,7 +110,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Réseau</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -113,8 +129,8 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
-                    <p className="lg:text-[18px]">Sauvegarde</p>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                    <p className="lg:text-[18px]">Infrastructure Système</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
@@ -132,7 +148,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Supervision</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -151,7 +167,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Sécurité</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -170,7 +186,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Virtualisation</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -189,7 +205,7 @@ const NosIntegrations = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">Intégration</h1>
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
                     <p className="lg:text-[18px]">Serveurs et stockage</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -197,10 +213,10 @@ const NosIntegrations = () => {
               </div>
             </SwiperSlide>
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default NosIntegrations;
+export default NosIntegrations

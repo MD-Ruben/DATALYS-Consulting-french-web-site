@@ -1,98 +1,158 @@
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-} from "@chakra-ui/react";
+"use client"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import useWeb3Forms from "@web3forms/react"
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
+  } = useForm({
+    mode: "onTouched",
+  })
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [message, setMessage] = useState("")
+
+  // Please update the Access Key in the .env
+  const apiKey =
+    process.env.PUBLIC_ACCESS_KEY || "78a95b88-cb54-4602-b53a-549b2e94711f"
+
+  const { submit: onSubmit } = useWeb3Forms({
+    access_key: apiKey,
+    settings: {
+      from_name: "DATALYS Consulting Store",
+      subject: "Nouveau message d'un contact à partir de votre site web",
+    },
+    onSuccess: (msg, data) => {
+      setIsSuccess(true)
+      setMessage("Succès. Message envoyé avec succès.")
+      reset()
+    },
+    onError: (msg, data) => {
+      setIsSuccess(false)
+      setMessage("Un problème s'est produit. Veuillez réessayer plus tard.")
+    },
+  })
+
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div
-              className="relative z-10 mb-12 rounded-sm bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
-              data-wow-delay=".15s
-              "
-            >
-              <div className="bottom-30 absolute hidden w-full px-4 md:block">
-                <div className="mx-auto max-w-[700px]">
-                  <img
-                    src="/images/logo/logo.png"
-                    alt="about-image"
-                    className="h-full w-full opacity-5"
-                  />
-                </div>
-              </div>
+            <div className="mb-12 rounded-sm bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Agence de conseil pour votre entreprise
+                Contactez-nous !
               </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
-                Faire face à un problème pour obtenir un devis ! <br />
-                Contactez-nous
-              </p>
-              <FormControl isRequired>
-                <div className="-mx-4 flex flex-wrap">
+
+              <form onSubmit={handleSubmit(onSubmit)} className="my-10">
+                <div className="flex flex-wrap">
+                  <input
+                    type="checkbox"
+                    id="botcheck"
+                    className="hidden"
+                    style={{ display: "none" }}
+                    {...register("botcheck")}
+                  ></input>
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <FormLabel
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Votre nom
-                      </FormLabel>
+                    <div className="mb-5">
                       <input
                         type="text"
-                        placeholder="Entrer votre nom"
-                        className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                        disabled
+                        placeholder="Nom et prénom"
+                        autoComplete="off"
+                        className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-primary ${
+                          errors.name
+                            ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                            : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                        }`}
+                        {...register("name", {
+                          required: "Le nom complet est obligatoire",
+                          maxLength: 80,
+                        })}
                       />
+                      {errors.name && (
+                        <div className="mt-1 text-red-600">
+                          <small>{errors.name.message}</small>
+                        </div>
+                      )}
                     </div>
                   </div>
+
                   <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Votre e-mail
+                    <div className="mb-5">
+                      <label htmlFor="email_address" className="sr-only">
+                        Adresse e-mail
                       </label>
                       <input
+                        id="email_address"
                         type="email"
-                        placeholder="Enter votre adresse e-mail"
-                        className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                        disabled
+                        placeholder="Adresse e-mail"
+                        autoComplete="off"
+                        className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                          errors.email
+                            ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                            : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                        }`}
+                        {...register("email", {
+                          required: "Saisissez votre adresse e-mail",
+                          pattern: {
+                            value: /^\S+@\S+$/i,
+                            message: "Veuillez saisir un e-mail valide",
+                          },
+                        })}
                       />
+                      {errors.email && (
+                        <div className="mt-1 text-red-600">
+                          <small>{errors.email.message}</small>
+                        </div>
+                      )}
                     </div>
                   </div>
+
                   <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Votre message
-                      </label>
+                    <div className="mb-3">
                       <textarea
                         name="message"
-                        rows={5}
-                        placeholder="Entrer votre message"
-                        className="border-stroke w-full resize-none rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                        disabled
-                      ></textarea>
+                        placeholder="Votre message"
+                        className={`h-36 w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                          errors.message
+                            ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                            : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                        }`}
+                        {...register("message", {
+                          required: "Saisissez votre message",
+                        })}
+                      />
+                      {errors.message && (
+                        <div className="mt-1 text-red-600">
+                          <small>{errors.message.message}</small>
+                        </div>
+                      )}
                     </div>
                   </div>
+
                   <div className="w-full px-4">
                     <button
-                      className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
-                      disabled
+                      type="submit"
+                      className="rounded-sm bg-primary px-9 py-4 font-semibold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring focus:ring-gray-200 focus:ring-offset-2 dark:bg-primary dark:text-white"
                     >
-                      Contactez-nous
+                      {isSubmitting ? "Envoi..." : "Contactez-nous"}
                     </button>
                   </div>
                 </div>
-              </FormControl>
+              </form>
+
+              {isSubmitSuccessful && isSuccess && (
+                <div className="mt-3 text-center text-sm text-green-500">
+                  {message}
+                </div>
+              )}
+              {isSubmitSuccessful && !isSuccess && (
+                <div className="mt-3 text-center text-sm text-red-500">
+                  {message}
+                </div>
+              )}
             </div>
           </div>
           <div className="relative mt-4 grid h-[500px] w-full max-w-full grid-cols-2 gap-1 overflow-hidden transition-none">
@@ -120,7 +180,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 import {
   Dropdown,
   DropdownTrigger,
@@ -9,41 +9,49 @@ import {
   DropdownItem,
   Button,
 } from "@nextui-org/react";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import menuData from "./menuData";
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import menuData from "./menuData"
 
 const Header = () => {
   // Navbar toggle
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false)
   const navbarToggleHandler = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+    setNavbarOpen(!navbarOpen)
+  }
 
   // Sticky Navbar
-  const [sticky, setSticky] = useState(false);
+  const [sticky, setSticky] = useState(false)
   const handleStickyNavbar = () => {
     if (window.scrollY >= 80) {
-      setSticky(true);
+      setSticky(true)
     } else {
-      setSticky(false);
+      setSticky(false)
     }
-  };
+  }
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyNavbar);
-  });
+    window.addEventListener("scroll", handleStickyNavbar)
+  })
 
   // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
+  const [openIndex, setOpenIndex] = useState(-1)
   const handleSubmenu = (index) => {
     if (openIndex === index) {
-      setOpenIndex(-1);
+      setOpenIndex(-1)
     } else {
-      setOpenIndex(index);
+      setOpenIndex(index)
     }
-  };
+  }
 
-  const usePathName = usePathname();
+  const usePathName = usePathname()
+
+  // Fonction pour vérifier si nous sommes sur une page d'expertise
+  const isExpertisePage = () => {
+    return usePathName.includes('/notreexpertise/')
+  }
+
+  // Ajouter cet état pour gérer l'ouverture du dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <>
@@ -63,13 +71,6 @@ const Header = () => {
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
-                {/* <Image
-                  src="/images/logo/logo-2.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                /> */}
                 <img
                   src="/images/logo/logo.png"
                   alt="logo"
@@ -116,10 +117,14 @@ const Header = () => {
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
+                            target={menuItem.newTab ? "_blank" : "_self"}
+                            rel={menuItem.newTab ? "noopener noreferrer" : ""}
                             className={`font-title flex py-2 text-sm font-semibold lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-[15px] ${
                               usePathName === menuItem.path
-                                ? "text-primary dark:text-white"
-                                : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                ? "text-primary dark:text-[#f5c034]"
+                                : menuItem.title === "Notre Expertise" && isExpertisePage()
+                                ? "text-[#f5c034]"
+                                : "text-dark hover:text-white dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
                             {menuItem.title}
@@ -128,7 +133,11 @@ const Header = () => {
                           <>
                             <p
                               onClick={() => handleSubmenu(index)}
-                              className="flex cursor-pointer items-center justify-between py-2 text-sm font-semibold text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-[15px]"
+                              className={`flex cursor-pointer items-center justify-between py-2 text-sm font-semibold lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-[15px] ${
+                                menuItem.title === "Notre Expertise" && isExpertisePage()
+                                  ? "text-[#f5c034]"
+                                  : "text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white"
+                              }`}
                             >
                               {menuItem.title}
                               <span className="pl-3">
@@ -166,60 +175,88 @@ const Header = () => {
               </div>
             </div>
             <div className="flex items-center justify-end pr-16 lg:pr-0">
-              <Dropdown>
-                <DropdownTrigger>
-                  <Link href="javascript:;" className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      viewBox="0 0 36 36"
+              <div 
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                <Dropdown 
+                  isOpen={isDropdownOpen}
+                  onOpenChange={setIsDropdownOpen}
+                >
+                  <DropdownTrigger>
+                    <Button 
+                      variant="light" 
+                      className="min-w-unit-0 p-0"
                     >
-                      <path
-                        fill="#ed2939"
-                        d="M36 27a4 4 0 0 1-4 4h-8V5h8a4 4 0 0 1 4 4z"
-                      />
-                      <path
-                        fill="#002495"
-                        d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5z"
-                      />
-                      <path fill="#eee" d="M12 5h12v26H12z" />
-                    </svg>
-                    <span className="dark:text-white/70">FR</span>
-                  </Link>
-                </DropdownTrigger>
-                <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem>
-                    <Link
-                      href="https://en.datalysconsulting.com/"
-                      className="flex items-center gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 36 36"
+                      <div className="flex items-center gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 36 36"
+                        >
+                          <path
+                            fill="#ed2939"
+                            d="M36 27a4 4 0 0 1-4 4h-8V5h8a4 4 0 0 1 4 4z"
+                          />
+                          <path
+                            fill="#002495"
+                            d="M4 5a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h8V5z"
+                          />
+                          <path fill="#eee" d="M12 5h12v26H12z" />
+                        </svg>
+                        <span className="dark:text-white/70">FR</span>
+                        <svg 
+                          className={`h-4 w-4 text-black transition-transform duration-200 dark:text-white/70 ${
+                            isDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none" 
+                          height="24" 
+                          stroke="currentColor" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth="2" 
+                          viewBox="0 0 24 24" 
+                          width="24"
+                        >
+                          <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                      </div>
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Language selection">
+                    <DropdownItem>
+                      <Link
+                        href="https://en.datalysconsulting.com/"
+                        className="flex items-center gap-2"
                       >
-                        <path
-                          fill="#eee"
-                          d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4"
-                        />
-                        <path
-                          fill="#ce1124"
-                          d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
-                        />
-                      </svg>
-                      <span className="dark:text-white/70">EN</span>
-                    </Link>
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 36 36"
+                        >
+                          <path
+                            fill="#eee"
+                            d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4"
+                          />
+                          <path
+                            fill="#ce1124"
+                            d="M21 5h-6v10H0v6h15v10h6V21h15v-6H21z"
+                          />
+                        </svg>
+                        <span className="dark:text-white/70">EN</span>
+                      </Link>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </div>
           </div>
         </div>
       </header>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

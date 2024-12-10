@@ -1,21 +1,20 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
-import SectionTitle from "../Common/SectionTitle";
 import Link from "next/link";
+import React, { useRef } from "react"
+import { motion } from "framer-motion"
+import Image from "next/image";
 
 const AboutIntegration = () => {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
   return (
     <>
       <section className="pt-16 md:pt-20 lg:pt-28">
         <div className="container">
           <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
             <div className="-mx-4 flex flex-wrap items-center">
-              <div className="font-Title relative z-10 w-full px-4 text-start lg:w-1/2">
-                {/* <h2 className="font-Title mb-4 text-start text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
-                  Intégration
-                </h2> */}
+              <div className="font-Title relative z-10 w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
                 <div className="absolute bottom-40 hidden w-full px-4 md:block">
                   <div className="mx-auto max-w-[700px]">
                     <img
@@ -25,8 +24,14 @@ const AboutIntegration = () => {
                     />
                   </div>
                 </div>
-                <p className="text-justify text-base leading-relaxed text-body-color [word-spacing:-1.7px] md:text-lg">
-                  Chez DATALYS, nous redéfinissons l'intégration des solutions
+                <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+              >
+                Chez DATALYS, nous redéfinissons l'intégration des solutions
                   pour répondre parfaitement à vos besoins. Notre mission
                   principale est de simplifier l'exploitation des services après
                   la mise en place, en garantissant une configuration minutieuse
@@ -34,20 +39,41 @@ const AboutIntegration = () => {
                   large éventail de services, incluant l'intégration de
                   solutions d'infrastructures systèmes, réseaux, sécurité, ainsi
                   que les énergies, datacenters, et le cloud.
-                </p>
-                <p className="mt-2 text-justify text-base leading-relaxed text-body-color [word-spacing:-1.7px] md:text-lg">
-                  Nous accompagnons nos clients de manière rigoureuse, avec pour
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+              >
+                Nous accompagnons nos clients de manière rigoureuse, avec pour
                   objectif de les rendre autonomes et confiants dans la gestion
                   de leurs solutions. Toutes nos intégrations sont suivies via
                   des outils et des canaux dédiés, spécialement conçus pour vous
                   offrir un service optimal.
-                </p>
-                <p className="mt-2 text-justify text-base leading-relaxed text-body-color [word-spacing:-1.7px] md:text-lg">
-                  Notre expertise se base sur des principes clés qui assurent la
-                  réussite de chaque projet.
-                </p>
-                <p className="mt-2 text-justify text-base leading-relaxed text-body-color [word-spacing:-1.7px] md:text-lg">
-                  Notre approche personnalisée et notre expertise technique nous
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+              >
+                Notre expertise se base sur des principes clés qui assurent la
+                réussite de chaque projet.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+              >
+                Notre approche personnalisée et notre expertise technique nous
                   permettent de répondre à vos besoins spécifiques et de vous
                   accompagner tout au long du processus d'intégration. Nous
                   croyons fermement que chaque projet est unique, et nous nous
@@ -55,14 +81,15 @@ const AboutIntegration = () => {
                   votre vision et vos objectifs. Ensemble, créons une présence
                   puissante et efficace, sur le marché, qui propulse votre
                   entreprise vers de nouveaux sommets.
-                </p>
-                <p className="mt-2 text-start text-base !leading-relaxed text-body-color md:text-lg">
+              </motion.p>
+
+                <p className="mt-2 text-start text-base !leading-relaxed font-light text-slate-300 md:text-lg">
                   <Link href="/contact" className="text-primary">
                     Contactez-nous
                   </Link>{" "}
                   dès aujourd'hui pour discuter de votre projet. d'intégration.
                 </p>
-                <p className="mt-2 text-start text-base uppercase !leading-relaxed text-body-color md:text-lg">
+                <p className="mt-2 text-start text-base uppercase !leading-relaxed font-light text-slate-300 md:text-lg">
                   PARLER A UN EXPERT --{" "}
                   <Link href="/contact" className="text-primary">
                     DEMANDER UN DEVIS
@@ -70,14 +97,21 @@ const AboutIntegration = () => {
                 </p>
               </div>
 
-              <div className="w-full px-4 lg:mr-0 lg:w-1/2">
-                <div className="relative mx-auto aspect-[33/32] max-w-[500px] rounded-full bg-[#294666] shadow-lg">
-                  <img
-                    src="/images/about/integration.jpg"
-                    alt="about-image"
-                    className="h-full w-full"
-                  />
-                </div>
+              <div className="w-full px-4 lg:mr-0 lg:w-1/2" ref={scrollRef}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative mx-auto max-w-[500px] rounded-full bg-[#294666] p-6 shadow-lg"
+              >
+                <img
+                  src="/images/about/arrows.png"
+                  alt="About Us Image"
+                  width={500}
+                  height={500}
+                  className="rounded-full"
+                />
+              </motion.div>
               </div>
             </div>
           </div>

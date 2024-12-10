@@ -19,7 +19,6 @@ const AboutPage = () => {
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       />
       <AboutIntegration />
-      {/* <DomainIntegration /> */}
       <NosIntegrations />
     </>
   );
