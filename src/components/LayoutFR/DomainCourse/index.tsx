@@ -3,11 +3,64 @@
 import { Accordion, AccordionItem } from "@nextui-org/accordion"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import useWeb3Forms from "@web3forms/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useRef } from "react"
 
+const ArrowBox = () => (
+  <div className="mr-3 flex h-6 w-6 items-center justify-center rounded-md bg-primary/20">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-primary"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  </div>
+)
+
 const Services = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful, isSubmitting },
+  } = useForm({
+    mode: "onTouched",
+  })
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [message, setMessage] = useState("")
+
+  // Please update the Access Key in the .env
+  const apiKey =
+    process.env.PUBLIC_ACCESS_KEY || "78a95b88-cb54-4602-b53a-549b2e94711f"
+
+  const { submit: onSubmit } = useWeb3Forms({
+    access_key: apiKey,
+    settings: {
+      from_name: "DATALYS Consulting Store",
+      subject: "Nouveau message d'un contact à partir de votre site web",
+    },
+    onSuccess: (msg, data) => {
+      setIsSuccess(true)
+      setMessage("Message envoyé avec succès.")
+      reset()
+    },
+    onError: (msg, data) => {
+      setIsSuccess(false)
+      setMessage("Un problème s'est produit. Veuillez réessayer plus tard.")
+    },
+  })
+
   const scrollRef = useRef<HTMLDivElement>(null)
 
   return (
@@ -18,7 +71,7 @@ const Services = () => {
       >
         <div className="container">
           <div className="max-w-full" data-wow-delay=".15s" ref={scrollRef}>
-            <div className="mx-auto mb-14 max-w-full text-center">
+            {/* <div className="mx-auto mb-14 max-w-full text-center">
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -29,7 +82,7 @@ const Services = () => {
               >
                 Nous formons
               </motion.h2>
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2">
               <div className="w-full">
@@ -60,67 +113,98 @@ const Services = () => {
                   </motion.h3>
 
                   <div className="inline-block">
-                    <div className="text-justify text-base font-light leading-relaxed text-white [word-spacing:-1.8px] md:text-[17px]">
+                    <div className="text-justify text-base font-light leading-relaxed text-white [word-spacing:-1.9px] md:text-[17px]">
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: false }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                       >
-                        <p>
-                          - Développement des Compétences: Offrir des formations
-                          sur mesure pour renforcer les compétences techniques
-                          et managériales de vos équipes.
-                        </p>
-                        <p>
-                          - Innovation et Adaptabilité : Encourager
-                          l'apprentissage de nouvelles technologies et des
-                          méthodes de travail.
-                        </p>
-                        <p>
-                          - Épanouissement Professionnel : Favoriser la montée
-                          en compétences et les perspectives de carrière.
-                        </p>
-                        <h2 className="mb-1 mt-4 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                        <div className="space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                Développement des Compétences :{" "}
+                              </span>{" "}
+                              Offrir des formations sur mesure pour renforcer
+                              les compétences techniques et managériales de vos
+                              équipes.
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                Innovation et Adaptabilité :
+                              </span>{" "}
+                              Encourager l'apprentissage de nouvelles
+                              technologies et des méthodes de travail.
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                Épanouissement Professionnel :
+                              </span>{" "}
+                              Favoriser la montée en compétences et les
+                              perspectives de carrière.
+                            </p>
+                          </div>
+                        </div>
+
+                        <h2 className="mb-4 mt-8 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
                           Nos Formations
                         </h2>
-                        <div className="mb-1 text-justify text-base font-light text-[#5793C7]">
-                          <p>
-                            -{" "}
-                            <span className="font-bold">
-                              Formations et Atelier Techniques :
-                            </span>{" "}
-                            Cours sur les outils, solutions et logiciels
-                            spécifiques à notre secteur d'activité.
-                          </p>
-                          <p>
-                            -{" "}
-                            <span className="font-bold">
-                              Ateliers de Leadership :
-                            </span>{" "}
-                            Programmes pour développer des compétences en
-                            gestion et en communication.
-                          </p>
-                          <p>
-                            - <span className="font-bold">Séminaires :</span>{" "}
-                            Initiatives pour la présentation de produits et
-                            solutions ainsi que le renforcement des capacités et
-                            compétences techniques.
-                          </p>
-                          <p>
-                            Ensemble, continuons à bâtir un avenir prometteur !
-                          </p>
-                          <p>
-                            Avez-vous besoin d’une formation ou d’un
-                            accompagnement ?
-                          </p>
-                          <div className="mt-2 flex items-end gap-2">
-                            <Link
-                              href="/contact"
-                              className="font-semibold text-[#5793C7]"
-                            >
-                              DEMANDER UN DEVIS
-                            </Link>
+
+                        <div className="space-y-4 text-justify text-base font-light text-[#5793C7]">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                Formations et Atelier Techniques :
+                              </span>{" "}
+                              Cours sur les outils, solutions et logiciels
+                              spécifiques à notre secteur d'activité.
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                Ateliers de Leadership :
+                              </span>{" "}
+                              Programmes pour développer des compétences en
+                              gestion et en communication.
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">Séminaires :</span>{" "}
+                              Initiatives pour la présentation de produits et
+                              solutions ainsi que le renforcement des capacités
+                              et compétences techniques.
+                            </p>
+                          </div>
+
+                          <div>
+                            <div>
+                              <p>
+                                Ensemble, continuons à bâtir un avenir
+                                prometteur ! Avez-vous besoin d'une formation ou
+                                d'un accompagnement ?
+                              </p>
+                              {/* <p>
+                              Avez-vous besoin d'une formation ou d'un
+                              accompagnement ?
+                            </p> */}
+                            </div>
                           </div>
                         </div>
                       </motion.div>
@@ -135,24 +219,36 @@ const Services = () => {
                       Besoin d'une formation, contactez-nous.
                     </h2>
 
-                    <form className="my-10">
+                    <form onSubmit={handleSubmit(onSubmit)} className="my-10">
                       <div className="flex flex-wrap">
                         <input
                           type="checkbox"
-                          disabled
                           id="botcheck"
                           className="hidden"
                           style={{ display: "none" }}
+                          {...register("botcheck")}
                         ></input>
                         <div className="w-full px-4 md:w-1/2">
                           <div className="mb-5">
                             <input
                               type="text"
-                              disabled
                               placeholder="Nom et prénom"
                               autoComplete="off"
-                              className="w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-primary"
+                              className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-primary ${
+                                errors.name
+                                  ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                                  : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                              }`}
+                              {...register("name", {
+                                required: "Le nom complet est obligatoire",
+                                maxLength: 80,
+                              })}
                             />
+                            {errors.name && (
+                              <div className="mt-1 text-red-600">
+                                <small>{errors.name.message}</small>
+                              </div>
+                            )}
                           </div>
                         </div>
 
@@ -163,44 +259,59 @@ const Services = () => {
                             </label>
                             <input
                               id="email_address"
-                              disabled
                               type="email"
                               placeholder="Adresse e-mail"
                               autoComplete="off"
-                              className="w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white"
+                              className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                                errors.email
+                                  ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                                  : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                              }`}
+                              {...register("email", {
+                                required: "Saisissez votre adresse e-mail",
+                                pattern: {
+                                  value: /^\S+@\S+$/i,
+                                  message: "Veuillez saisir un e-mail valide",
+                                },
+                              })}
                             />
+                            {errors.email && (
+                              <div className="mt-1 text-red-600">
+                                <small>{errors.email.message}</small>
+                              </div>
+                            )}
                           </div>
                         </div>
 
-                        <div className="w-full px-4 md:w-1/2">
+                        <div className="w-full px-4">
                           <div className="mb-5">
-                            <label htmlFor="email_address" className="sr-only">
-                              Adresse e-mail
+                            <label htmlFor="number" className="sr-only">
+                              Numéro de téléphone
                             </label>
                             <input
-                              id="email_address"
-                              disabled
-                              type="email"
-                              placeholder="Saisissez la formation"
+                              id="number"
+                              type="tel"
+                              placeholder="Numéro de téléphone"
                               autoComplete="off"
-                              className="w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white"
+                              className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                                errors.number
+                                  ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                                  : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                              }`}
+                              {...register("number", {
+                                required: "Saisissez votre numéro de téléphone",
+                                pattern: {
+                                  value: /^\+?[1-9]\d{1,14}$/,
+                                  message:
+                                    "Veuillez saisir un numéro de téléphone valide",
+                                },
+                              })}
                             />
-                          </div>
-                        </div>
-
-                        <div className="w-full px-4 md:w-1/2">
-                          <div className="mb-5">
-                            <label htmlFor="email_address" className="sr-only">
-                              Adresse e-mail
-                            </label>
-                            <input
-                              id="email_address"
-                              disabled
-                              type="email"
-                              placeholder="Saisissez le type de formation"
-                              autoComplete="off"
-                              className="w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white"
-                            />
+                            {errors.number && (
+                              <div className="mt-1 text-red-600">
+                                <small>{errors.number.message}</small>
+                              </div>
+                            )}
                           </div>
                         </div>
 
@@ -208,24 +319,45 @@ const Services = () => {
                           <div className="mb-3">
                             <textarea
                               name="message"
-                              disabled
                               placeholder="Votre message"
-                              className="h-36 w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white"
+                              className={`h-36 w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                                errors.message
+                                  ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                                  : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                              }`}
+                              {...register("message", {
+                                required: "Saisissez votre message",
+                              })}
                             />
+                            {errors.message && (
+                              <div className="mt-1 text-red-600">
+                                <small>{errors.message.message}</small>
+                              </div>
+                            )}
                           </div>
                         </div>
 
                         <div className="w-full px-4">
                           <button
                             type="submit"
-                            disabled
                             className="rounded-sm bg-primary px-9 py-4 font-semibold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring focus:ring-gray-200 focus:ring-offset-2 dark:bg-primary dark:text-white"
                           >
-                            Contactez-nous
+                            {isSubmitting ? "Envoi..." : "Contactez-nous"}
                           </button>
                         </div>
                       </div>
                     </form>
+
+                    {isSubmitSuccessful && isSuccess && (
+                      <div className="mt-3 text-center text-sm text-green-500">
+                        {message}
+                      </div>
+                    )}
+                    {isSubmitSuccessful && !isSuccess && (
+                      <div className="mt-3 text-center text-sm text-red-500">
+                        {message}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

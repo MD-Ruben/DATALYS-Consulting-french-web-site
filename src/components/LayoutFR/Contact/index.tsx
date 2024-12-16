@@ -27,7 +27,7 @@ const Contact = () => {
     },
     onSuccess: (msg, data) => {
       setIsSuccess(true)
-      setMessage("Succès. Message envoyé avec succès.")
+      setMessage("Message envoyé avec succès.")
       reset()
     },
     onError: (msg, data) => {
@@ -105,6 +105,37 @@ const Contact = () => {
                       {errors.email && (
                         <div className="mt-1 text-red-600">
                           <small>{errors.email.message}</small>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="w-full px-4">
+                    <div className="mb-5">
+                      <label htmlFor="number" className="sr-only">
+                      Numéro de téléphone
+                      </label>
+                      <input
+                        id="number"
+                        type="tel"
+                        placeholder="Numéro de téléphone"
+                        autoComplete="off"
+                        className={`w-full rounded-md border-2 px-4 py-3 outline-none placeholder:text-primary focus:ring-4 dark:bg-gray-900 dark:text-white ${
+                          errors.number
+                            ? "border-red-600 ring-red-100 focus:border-red-600 dark:ring-0"
+                            : "border-gray-300 ring-gray-100 focus:border-gray-600 dark:border-gray-600 dark:ring-0 dark:focus:border-primary"
+                        }`}
+                        {...register("number", {
+                          required: "Saisissez votre numéro de téléphone",
+                          pattern: {
+                            value: /^\+?[1-9]\d{1,14}$/,
+                            message: "Veuillez saisir un numéro de téléphone valide",
+                          },
+                        })}
+                      />
+                      {errors.number && (
+                        <div className="mt-1 text-red-600">
+                          <small>{errors.number.message}</small>
                         </div>
                       )}
                     </div>
