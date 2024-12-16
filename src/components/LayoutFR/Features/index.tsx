@@ -24,7 +24,7 @@ const Features = () => {
               transition={{ duration: 0.5 }}
               className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]"
             >
-              Nos domaines d’expertise
+              Nos expertises
             </motion.h2>
           </div>
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-3">

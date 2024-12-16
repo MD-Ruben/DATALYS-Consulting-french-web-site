@@ -109,13 +109,13 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative z-10 overflow-hidden bg-gradient-to-tr from-[#29547A] to-black pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+      className="relative z-10 overflow-hidden bg-gradient-to-tr from-[#29547A] to-black pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pt-[180px] 2xl:pt-[210px]"
     >
       <ScrollAnimation>
         <div className="container">
           <div className="-mx-4 flex flex-wrap items-center">
-            <div className="mx-auto max-w-screen px-4">
-              <div className="grid grid-cols-2">
+            <div className="max-w-screen w-full px-3 md:px-0">
+              <div className="grid grid-cols-2 gap-0 md:gap-8">
                 <div className="col-span-2 mb-7 md:col-span-1 md:mb-0">
                   <div className="relative mx-auto mt-0 max-w-2xl text-left md:mt-12">
                     <div className="mb-3 leading-loose">
@@ -140,45 +140,40 @@ const Hero = () => {
                         }}
                       >
                         <span className="pointer-events-none bg-clip-text text-3xl font-extralight leading-tight text-transparent dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-6xl lg:font-light lg:tracking-wide">
-                          Bienvenue chez 
+                          Bienvenue chez
                         </span>
                         <br />{" "}
                         <h1 className="text-3xl font-extralight leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight lg:text-6xl lg:font-bold lg:tracking-wide">
                           DATALYS{" "}
-                          <span className="text-[#f5c034]">Consulting</span>
+                          <span className="font-extralight leading-tight text-[#f5c034]">
+                            Consulting
+                          </span>
                         </h1>
                       </motion.div>
                     </div>
                     <h2 className="mb-3">
                       <TypeIt
-                        className="pointer-events-none bg-clip-text text-xl capitalize font-semibold leading-tight text-transparent dark:text-white sm:text-2xl md:text-3xl lg:text-4xl"
+                        options={{
+                          loop: true,
+                        }}
+                        className="pointer-events-none bg-clip-text text-xl font-semibold capitalize leading-tight text-transparent dark:text-white sm:text-2xl md:text-3xl lg:text-4xl"
                         getBeforeInit={(instance) => {
                           instance
-                            .type(
-                              'Infrastructure Système & Cloud'
-                            )
+                            .type("Infrastructure Système & Cloud")
                             .pause(750)
                             .delete(30)
                             .pause(500)
-                            .type(
-                              'Data center & énergie'
-                            )
+                            .type("Data center & énergie")
                             .pause(750)
                             .delete(21)
                             .pause(500)
-                            .type('Réseau & Sécurité')
+                            .type("Réseau & Sécurité")
                             .pause(750)
                             .delete(17)
                             .pause(500)
-                            .type(
-                              'Data center & énergie'
-                            )
+                            .type("Data center & énergie")
                             .pause(750)
                             .delete(21)
-                            .pause(500)
-                            .type(
-                              'Infrastructure Système & Cloud'
-                            )
 
                           // Remember to return it!
                           return instance
@@ -214,7 +209,7 @@ const Hero = () => {
                         href="/contact"
                       >
                         {" "}
-                        <span className="text-sm !leading-relaxed dark:text-white sm:text-base md:text-lg">
+                        <span className="text-sm flex-nowrap dark:text-white sm:text-base md:text-lg">
                           Parler à un Expert
                         </span>
                       </Button>
@@ -243,10 +238,12 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="col-span-2 md:col-span-1">
-                  <div className="mx-auto max-w-2xl">
+                  <div className="mx-auto max-w-2xl p-0 md:p-2">
                     <div className="relative mx-auto w-full rounded-full">
                       <div className="relative h-[560px] w-full">
-                        <div className="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-full md:shadow-2xl">
+                        {/* <div className="bg-background relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-full md:shadow-2xl">
+                          <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black"> */}
+                        <div className="relative z-10 flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-full bg-dark md:shadow-2xl">
                           <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
                             {/* DATALYS */}
                             <img

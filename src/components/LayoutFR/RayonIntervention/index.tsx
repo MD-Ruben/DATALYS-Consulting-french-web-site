@@ -70,7 +70,7 @@ const RayonIntervention = () => {
                 <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                 <div className="relative flex flex-col gap-3">
                   <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                  <h1 className="text-xl lg:text-2xl">AUDIT</h1>
+                  {/* <h1 className="text-xl lg:text-2xl">AUDIT</h1> */}
                   <p className="lg:text-[18px]">
                     Audit de la configuration des services
                   </p>
@@ -90,7 +90,7 @@ const RayonIntervention = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">AUDIT </h1>
+                    {/* <h1 className="text-xl lg:text-2xl">AUDIT </h1> */}
                     <p className="lg:text-[18px]">Audit des architectures </p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -109,7 +109,7 @@ const RayonIntervention = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">AUDIT </h1>
+                    {/* <h1 className="text-xl lg:text-2xl">AUDIT </h1> */}
                     <p className="lg:text-[18px]">Audit de sécurité</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
@@ -128,7 +128,7 @@ const RayonIntervention = () => {
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    <h1 className="text-xl lg:text-2xl">AUDIT </h1>
+                    {/* <h1 className="text-xl lg:text-2xl">AUDIT </h1> */}
                     <p className="lg:text-[18px]">Analyse des procédés</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />

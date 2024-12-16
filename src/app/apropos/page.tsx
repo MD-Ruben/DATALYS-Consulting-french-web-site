@@ -3,6 +3,7 @@ import AboutSectionFour from "@/components/LayoutFR/About/AboutSectionFour";
 import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 
 import { Metadata } from "next";
+import Features from "@/components/LayoutFR/Features";
 
 export const metadata: Metadata = {
   title: "A propos de nous | DATALYS Consulting",
@@ -13,12 +14,13 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="A propos de nous"
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
-      />
+      /> */}
       <AboutSectionFour />
-      <AboutSectionOne />
+      {/* <AboutSectionOne /> */}
+      <Features />
     </>
   );
 };

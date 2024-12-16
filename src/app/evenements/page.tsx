@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="Evénement"
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
-      />
+      /> */}
       <Events />
     </>
   );

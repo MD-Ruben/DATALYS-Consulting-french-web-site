@@ -24,7 +24,7 @@ export default function Home() {
       <Hero />
       <AboutSectionThree />
       <Features />
-      <AboutSectionOne />
+      {/* <AboutSectionOne /> */}
     </main>
   );
 }

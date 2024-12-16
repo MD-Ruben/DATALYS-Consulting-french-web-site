@@ -49,8 +49,8 @@ const AboutSectionThree = () => {
             </div>
 
             {/* Text Section */}
-            <div className="relative z-10 w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
-              <div className="absolute bottom-20 hidden w-full px-4 md:block">
+            <div className="w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
+              {/* <div className="absolute bottom-20 hidden w-full px-4 md:block">
                 <div className="mx-auto max-w-[700px]">
                   <img
                     src="/images/logo/logo.png"
@@ -60,7 +60,7 @@ const AboutSectionThree = () => {
                     className="opacity-10"
                   />
                 </div>
-              </div>
+              </div> */}
 
               <motion.h2
                 initial={{ x: -50, opacity: 0 }}

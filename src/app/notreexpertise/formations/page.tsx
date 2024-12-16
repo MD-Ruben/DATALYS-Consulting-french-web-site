@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* <Breadcrumb
         pageName="Formation" 
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
-      />
+      /> */}
       <AboutFormations />
       <DomainCourse />
-      <ModuleFormations />
+      {/* <ModuleFormations /> */}
     </>
   );
 };

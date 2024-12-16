@@ -469,7 +469,7 @@ const featuresData: Feature[] = [
     ),
     title: "Analyse des données",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Exploitez pleinement le potentiel de vos données pour prendre des décisions stratégiques. Offrez à votre entreprise un avantage compétitif grâce à des insights précis et exploitables.",
   },
   {
     id: 1,
@@ -659,7 +659,7 @@ const featuresData: Feature[] = [
     ),
     title: "Sécurité des données",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Protégez vos systèmes et données contre les menaces croissantes du numérique. Adoptez des solutions de sécurité adaptées pour garantir la continuité de vos activités.",
   },
   {
     id: 1,
@@ -969,7 +969,7 @@ const featuresData: Feature[] = [
     ),
     title: "Intelligence artificielle",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Révolutionnez vos processus avec l’intelligence artificielle et accélérez vos résultats. Passez à l’étape suivante avec des solutions d’IA sur mesure adaptées à vos besoins.",
   },
   {
     id: 1,
@@ -1005,7 +1005,7 @@ const featuresData: Feature[] = [
     ),
     title: "Énergie ",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Boostez la résilience de vos infrastructures énergétiques avec des solutions innovantes. Garantissez une efficacité durable tout en maîtrisant vos coûts.",
   },
   {
     id: 1,
@@ -1103,7 +1103,7 @@ const featuresData: Feature[] = [
     ),
     title: "Data Center ",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Développez des centres de données à la pointe de la technologie pour répondre à vos besoins croissants. Profitez d’infrastructures fiables, sécurisées et évolutives.",
   },
   {
     id: 1,
@@ -1188,7 +1188,7 @@ const featuresData: Feature[] = [
     ),
     title: "Optimisation Énergétique",
     paragraph:
-      "Renforcer progressivement la capacité des entreprises à sortir des sentiers battus grâce à des partenariats de mise à niveau des ressources.",
+      "Réduisez votre consommation tout en augmentant vos performances grâce à des solutions d’optimisation énergétique. Contribuez à un avenir plus vert et à des économies substantielles.",
   },
 ]
 export default featuresData

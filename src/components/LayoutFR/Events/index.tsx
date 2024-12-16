@@ -85,10 +85,10 @@ const Events = () => {
   };
 
   return (
-    <section className="relative z-10 py-16 md:py-20 lg:py-28">
+    <section className="relative z-10 py-16 md:py-20 lg:py-28 mt-[45px] md:mt-[175px]">
       <div className="container">
         <div className="relative z-10 mx-auto mb-14 max-w-[760px] text-center">
-          <div className="bottom-30 absolute hidden w-full px-4 md:block">
+          {/* <div className="bottom-30 absolute hidden w-full px-4 md:block">
             <div className="mx-auto max-w-[700px]">
               <img
                 src="/images/logo/logo.png"
@@ -96,10 +96,10 @@ const Events = () => {
                 className="h-full w-full opacity-10"
               />
             </div>
-          </div>
+          </div> */}
           
           {/* Introduction text */}
-          <p className="text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg">
+          <p className="text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-xl">
           Chers partenaires et futurs partenaires de la communauté DATALYS, nous avons le plaisir de partager avec vous les moments extraordinaires que nous avons vécus lors de nos événements passés et de nos rencontres à venir.
           </p>
 

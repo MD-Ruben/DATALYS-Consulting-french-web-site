@@ -8,18 +8,18 @@ const AboutFormations = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   return (
-    <section className="pt-16 md:pt-20 lg:pt-28">
+    <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:mt-[175px]">
       <div className="container">
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div
-              className="font-Title relative z-10 w-full px-4 text-start lg:w-1/2"
+              className="font-Title w-full px-4 text-start lg:w-1/2"
               ref={scrollRef}
             >
               {/* <h2 className="font-Title mb-4 text-start text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
                 Formation
               </h2> */}
-              <div className="absolute bottom-20 hidden w-full px-4 md:block">
+              {/* <div className="absolute bottom-20 hidden w-full px-4 md:block">
                 <div className="mx-auto max-w-[700px]">
                   <img
                     src="/images/logo/logo.png"
@@ -27,13 +27,13 @@ const AboutFormations = () => {
                     className="h-full w-full opacity-10"
                   />
                 </div>
-              </div>
+              </div> */}
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Chez DATALYS, nous croyons fermement que le développement des
                 compétences de vos ressources est essentiel à la fois pour leur
@@ -48,7 +48,7 @@ const AboutFormations = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Nous proposons des formations sur mesure dans sur le Cloud,
                 l’Infrastructure Système, l’Energie & Datacenter, les Réseaux &
@@ -62,7 +62,7 @@ const AboutFormations = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Nous utilisons une approche mixte comprenant des formations en
                 présentiel, des e-learning et des sessions de coaching

@@ -23,15 +23,15 @@ const AboutSectionFour = () => {
   )
 
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
+    <section id="about" className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:mt-[175px]">
       <div className="container">
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div
-              className="font-Title relative z-10 w-full px-4 text-start lg:w-1/2"
+              className="font-Title w-full px-4 text-start lg:w-1/2"
               ref={scrollRef}
             >
-              <div className="absolute bottom-40 hidden w-full px-4 md:block">
+              {/* <div className="absolute bottom-40 hidden w-full px-4 md:block">
                 <div className="mx-auto max-w-[700px]">
                   <img
                     src="/images/logo/logo.png"
@@ -39,13 +39,13 @@ const AboutSectionFour = () => {
                     className="h-full w-full opacity-10"
                   />
                 </div>
-              </div>
+              </div> */}
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.6px] md:text-lg"
+                className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.2px] md:text-xl"
               >
                 Fondé en 2023, par des Consultants engagés et passionnés de la
                 Digitalisation, Datalys Consulting est une Entreprise de Service
@@ -104,7 +104,7 @@ const AboutSectionFour = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
-                transition={{ delay: 0.2, duration: 0.5 }}
+                transition={{ delay: 0.2, duration: 0.5 }} 
                 className="relative mx-auto max-w-[500px] rounded-full bg-[#294666] p-4 shadow-lg"
               >
                 <img

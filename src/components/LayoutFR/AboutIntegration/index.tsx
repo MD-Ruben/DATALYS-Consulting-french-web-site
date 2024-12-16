@@ -10,12 +10,12 @@ const AboutIntegration = () => {
 
   return (
     <>
-      <section className="pt-16 md:pt-20 lg:pt-28">
+      <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:mt-[175px]">
         <div className="container">
           <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
             <div className="-mx-4 flex flex-wrap items-center">
-              <div className="font-Title relative z-10 w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
-                <div className="absolute bottom-40 hidden w-full px-4 md:block">
+              <div className="font-Title w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
+                {/* <div className="absolute bottom-40 hidden w-full px-4 md:block">
                   <div className="mx-auto max-w-[700px]">
                     <img
                       src="/images/logo/logo.png"
@@ -23,13 +23,13 @@ const AboutIntegration = () => {
                       className="h-full w-full opacity-10"
                     />
                   </div>
-                </div>
+                </div> */}
                 <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Chez DATALYS, nous redéfinissons l'intégration des solutions
                   pour répondre parfaitement à vos besoins. Notre mission
@@ -46,7 +46,7 @@ const AboutIntegration = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Nous accompagnons nos clients de manière rigoureuse, avec pour
                   objectif de les rendre autonomes et confiants dans la gestion
@@ -60,7 +60,7 @@ const AboutIntegration = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Notre expertise se base sur des principes clés qui assurent la
                 réussite de chaque projet.
@@ -71,7 +71,7 @@ const AboutIntegration = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-lg"
+                className="mt-2 text-justify text-base leading-relaxed font-light text-slate-300 [word-spacing:-1.7px] md:text-xl"
               >
                 Notre approche personnalisée et notre expertise technique nous
                   permettent de répondre à vos besoins spécifiques et de vous
@@ -83,15 +83,12 @@ const AboutIntegration = () => {
                   entreprise vers de nouveaux sommets.
               </motion.p>
 
-                <p className="mt-2 text-start text-base !leading-relaxed font-light text-slate-300 md:text-lg">
+                <p className="mt-2 text-start text-base !leading-relaxed font-light text-slate-300 md:text-xl">
                   <Link href="/contact" className="text-primary">
                     Contactez-nous
                   </Link>{" "}
                   dès aujourd'hui pour discuter de votre projet. d'intégration.
-                </p>
-                <p className="mt-2 text-start text-base uppercase !leading-relaxed font-light text-slate-300 md:text-lg">
-                  PARLER A UN EXPERT --{" "}
-                  <Link href="/contact" className="text-primary">
+                  <Link href="/contact" className="text-primary mx-2">
                     DEMANDER UN DEVIS
                   </Link>
                 </p>

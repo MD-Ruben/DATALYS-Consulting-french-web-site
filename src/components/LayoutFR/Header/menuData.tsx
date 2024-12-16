@@ -46,7 +46,7 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "Boutique",
+    title: "E-Commerce",
     path: "https://store.datalysconsulting.com/",
     newTab: true,
   },
