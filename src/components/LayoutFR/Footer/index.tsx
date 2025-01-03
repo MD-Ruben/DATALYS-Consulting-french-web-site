@@ -168,29 +168,15 @@ const Footer = () => {
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Boutique
                 </h2>
-                <div className="flex">
-                  <Button
-                    className="flex items-center justify-center rounded-xl border-2 dark:border-body-color-dark"
-                    as={Link}
-                    target="_blank"
-                    href="https://store.datalysconsulting.com/"
-                  >
-                    {" "}
-                    <span className="text-sm !leading-relaxed dark:text-body-color-dark sm:text-base md:text-lg">
-                      Commandez maintenant
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      viewBox="0 0 24 24"
+                <div className="flex items-center justify-start gap-2 space-y-4 sm:flex-row sm:space-y-0">
+                  <div>
+                    <Link
+                      href="https://store.datalysconsulting.com/"
+                      className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                     >
-                      <path
-                        fill="#959CB1"
-                        d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
-                      />
-                    </svg>
-                  </Button>
+                      Commander maintenant
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

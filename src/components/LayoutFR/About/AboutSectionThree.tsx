@@ -36,7 +36,7 @@ const AboutSectionThree = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto p-4 max-w-[500px] rounded-full bg-[#294666] shadow-lg"
+                className="relative mx-auto max-w-[500px] rounded-full bg-[#294666] p-4 shadow-lg"
               >
                 <img
                   src="/images/about/pexels.jpg"
@@ -78,13 +78,13 @@ const AboutSectionThree = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-base font-light leading-relaxed text-justify text-slate-300 [word-spacing:-1.2px] md:text-xl"
+                className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.2px] md:text-xl"
               >
                 Fondé en 2023, par des Consultants engagés et passionnés de la
                 Digitalisation, Datalys Consulting est une Entreprise de Service
-                IT qui apporte une expertise réinventée. Nous sommes
-                spécialisés dans le Cloud, l’Infrastructure IT et les Réseaux &
-                Sécurité : Les sujets clés impactant le monde de l’IT et de la
+                IT qui apporte une expertise réinventée. Nous sommes spécialisés
+                dans le Cloud, l’Infrastructure IT et les Réseaux & Sécurité :
+                Les sujets clés impactant le monde de l’IT et de la
                 Digitalisation.
               </motion.p>
 
@@ -93,7 +93,7 @@ const AboutSectionThree = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="mt-2 text-base font-light leading-relaxed text-justify text-slate-300 [word-spacing:-1.2px] md:text-xl"
+                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.2px] md:text-xl"
               >
                 La transformation, la gestion d'infrastructures IT & cloud,
                 l'optimisation énergétique des Data Centers ainsi que le
@@ -109,7 +109,7 @@ const AboutSectionThree = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                className="mt-2 text-base font-light leading-relaxed text-justify text-slate-300 [word-spacing:-1.2px] md:text-xl"
+                className="mt-2 text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.2px] md:text-xl"
               >
                 Chez DATALYS, l'innovation est au coeur de notre ADN. Nous
                 proposons à nos clients des solutions de nouvelles générations
@@ -123,29 +123,16 @@ const AboutSectionThree = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="mt-4 flex items-center"
+                className="mt-4 flex-col items-center justify-start gap-2 space-y-4 sm:flex-row sm:space-y-0"
               >
-                <Button
-                  as={Link}
-                  href="/apropos"
-                  className="flex items-center justify-center rounded-xl border-2 dark:border-body-color-dark"
-                >
-                  <span className="text-sm sm:text-base md:text-lg dark:text-slate-300">
-                    Voir plus
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="25"
-                    viewBox="0 0 24 24"
-                    className="ml-2"
+                <div>
+                  <Link
+                    href="/apropos"
+                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    <path
-                      fill="#959CB1"
-                      d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
-                    />
-                  </svg>
-                </Button>
+                    Voir plus
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>

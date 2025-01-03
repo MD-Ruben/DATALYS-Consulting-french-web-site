@@ -6,6 +6,7 @@ import ScrollUp from "@/components/LayoutFR/Common/ScrollUp";
 import Features from "@/components/LayoutFR/Features";
 import AboutSectionThree from "@/components/LayoutFR/About/AboutSectionThree";
 import Hero from "@/components/LayoutFR/Hero";
+import Heroo from "@/components/LayoutFR/Heroo";
 import Testimonials from "@/components/LayoutFR/Testimonials";
 import { Metadata } from "next";
 import PageTransition from "@/components/LayoutFR/Transitions/PageTransition"
@@ -21,7 +22,8 @@ export default function Home() {
   return (
     <main>
       <ScrollUp />
-      <Hero />
+      <Heroo />
+      {/* <Hero /> */}
       <AboutSectionThree />
       <Features />
       {/* <AboutSectionOne /> */}

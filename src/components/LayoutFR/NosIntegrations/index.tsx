@@ -1,5 +1,5 @@
 "use client"
-import SectionTitle from "../Common/SectionTitle"
+
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import { RxAccessibility } from "react-icons/rx"
 import Link from "next/link"
@@ -12,60 +12,10 @@ import { FreeMode, Navigation, Autoplay } from "swiper/modules"
 import { RxArrowTopRight } from "react-icons/rx"
 import { useRef } from "react"
 
-// Composant pour les boutons de navigation
-const NavigationButtons = () => {
-  const swiper = useSwiper();
-  
-  return (
-    <div className="absolute top-1/2 z-10 flex w-full -translate-y-1/2 justify-between px-4">
-      <button
-        onClick={() => swiper.slidePrev()}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary transition-all hover:bg-primary hover:text-white"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15.75 19.5L8.25 12l7.5-7.5"
-          />
-        </svg>
-      </button>
-      <button
-        onClick={() => swiper.slideNext()}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary transition-all hover:bg-primary hover:text-white"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M8.25 4.5l7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </button>
-    </div>
-  );
-};
-
 const NosIntegrations = () => {
-  const scrollRef = useRef<HTMLDivElement>(null)
-
   return (
-    <section className="py-16 md:py-20 lg:py-24">
-      <div className="container">
+    <section className="relative py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4">
         <div className="mx-auto mb-14 max-w-[560px] text-center">
           <motion.h2
             initial={{ x: -50, opacity: 0 }}
@@ -82,213 +32,249 @@ const NosIntegrations = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center"
+          className="relative mx-auto max-w-[1200px]"
         >
-          <div className="relative w-full">
-            <Swiper
-              breakpoints={{
-                340: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                700: {
-                  slidesPerView: 5,
-                  spaceBetween: 20,
-                },
-              }}
-              centeredSlides={true}
-              loop={true}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              navigation={true}
-              modules={[Navigation, Autoplay]}
-              className="w-full py-10"
-              onSlideChange={(swiper) => {
-                // Réinitialiser tous les slides
-                const slides = document.querySelectorAll('.swiper-slide');
-                slides.forEach(slide => {
-                  slide.classList.remove('scale-125', 'z-10');
-                  (slide as HTMLElement).style.opacity = '0.5';
-                });
-                // Zoomer le slide actif
-                const activeSlide = slides[swiper.activeIndex];
-                if (activeSlide) {
-                  activeSlide.classList.add('scale-125', 'z-10');
-                  (activeSlide as HTMLElement).style.opacity = '1';
-                }
-              }}
-            >
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+          <Swiper
+            breakpoints={{
+              340: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+              },
+            }}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            navigation={{
+              prevEl: '.custom-prev',
+              nextEl: '.custom-next',
+            }}
+            modules={[Navigation, Autoplay]}
+            className="relative mx-auto w-full"
+          >
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url("/images/integration/1-Cloud_Integration.PNG")`,
+                  }}
+                />
+                <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
+                <div className="relative flex flex-col gap-3">
+                  <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
+                  {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                  <p className="lg:text-[18px]">Cloud</p>
+                </div>
+                <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <Link href="/notreexpertise/integration">
                   <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url("/images/integration/cloud.jpg")`,
+                      backgroundImage: `url("/images/integration/2-Datacenter_Integration.jpg")`,
                     }}
                   />
                   <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
                   <div className="relative flex flex-col gap-3">
                     <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
                     {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Cloud</p>
+                    <p className="lg:text-[18px]">Data center</p>
                   </div>
                   <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/DataCenter.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Data center</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/reseau.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Réseau</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/sauvegarde.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Infrastructure Système</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/supervision.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Supervision</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/security.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Sécurité</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/Virtualization.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Virtualisation</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                  <Link href="/notreexpertise/integration">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url("/images/integration/serveur-stockage.jpg")`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                    <div className="relative flex flex-col gap-3">
-                      <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                      {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                      <p className="lg:text-[18px]">Serveurs et stockage</p>
-                    </div>
-                    <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-                  </Link>
-                </div>
-              </SwiperSlide>
-              <NavigationButtons />
-            </Swiper>
-          </div>
+                </Link>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <Link href="/notreexpertise/integration">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url("/images/integration/reseau.jpg")`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
+                  <div className="relative flex flex-col gap-3">
+                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                    <p className="lg:text-[18px]">Réseau</p>
+                  </div>
+                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
+                </Link>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <Link href="/notreexpertise/integration">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url("/images/integration/3-Securité_Integration.PNG")`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
+                  <div className="relative flex flex-col gap-3">
+                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                    <p className="lg:text-[18px]">Sécurité</p>
+                  </div>
+                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
+                </Link>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <Link href="/notreexpertise/integration">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url("/images/integration/Infrastructure-Sys-Intregation.jpg")`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
+                  <div className="relative flex flex-col gap-3">
+                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                    <p className="lg:text-[18px]">Infrastructure système</p>
+                  </div>
+                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
+                </Link>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
+                <Link href="/notreexpertise/integration">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url("/images/integration/serveur-stockage.jpg")`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
+                  <div className="relative flex flex-col gap-3">
+                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
+                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
+                    <p className="lg:text-[18px]">Serveurs et stockage</p>
+                  </div>
+                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
+                </Link>
+              </div>
+            </SwiperSlide>
+            <button className="custom-prev absolute left-0 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-full bg-primary/30 text-white transition-all hover:bg-primary hover:text-white md:left-4 lg:left-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={3}
+                stroke="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button className="custom-next absolute right-0 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-full bg-primary/30 text-white transition-all hover:bg-primary hover:text-white md:right-4 lg:right-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={3}
+                stroke="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </Swiper>
         </motion.div>
       </div>
 
       <style jsx global>{`
-        .swiper-slide {
-          transition: all 0.3s ease;
-          opacity: 0.5;
-        }
-        .swiper-slide-active {
-          transform: scale(1.25);
-          z-index: 10;
-          opacity: 1;
-        }
         .swiper-wrapper {
-          padding: 50px 0;
+          align-items: center;
+          padding: 40px 0;
+        }
+        
+        .swiper-slide {
+          transition: all 0.5s ease;
+          opacity: 0.4;
+          transform: scale(0.65);
+        }
+        
+        .swiper-slide-active {
+          transform: scale(1.2) !important;
+          opacity: 1 !important;
+          z-index: 20;
+        }
+        
+        .swiper-slide-active .group {
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .swiper-slide-prev,
+        .swiper-slide-next {
+          transform: scale(0.8);
+          opacity: 0.6;
+          z-index: 10;
+        }
+
+        .swiper {
+          overflow: hidden;
+          padding: 0 40px;
+          margin: 0 auto;
+        }
+
+        /* Masquer les boutons de navigation par défaut de Swiper */
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .swiper {
+            padding: 0 20px;
+          }
+          
+          .swiper-slide {
+            max-width: 280px;
+            margin: 0 auto;
+          }
+          
+          .swiper-slide-active {
+            transform: scale(1.1) !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .swiper-slide {
+            max-width: 240px;
+          }
+          
+          .swiper-slide-active {
+            transform: scale(1.05) !important;
+          }
         }
       `}</style>
     </section>

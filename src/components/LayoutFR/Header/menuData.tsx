@@ -41,8 +41,8 @@ const menuData: Menu[] = [
   {
     id: 44,
     title: "Espace Entreprise",
-    path: "https://applicationweb.datalysconsulting.com/",
-    newTab: true,
+    path: "/espace-entreprise",
+    newTab: false,
   },
   {
     id: 4,

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form"
 import useWeb3Forms from "@web3forms/react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef } from "react" 
 
 const ArrowBox = () => (
   <div className="mr-3 flex h-6 w-6 items-center justify-center rounded-md bg-primary/20">

@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
 import { Metadata } from "next";
 import DomainIntegration from "@/components/LayoutFR/DomainIntegration";
 import NosIntegrations from "@/components/LayoutFR/NosIntegrations";
+import ScrollAnimation from "@/components/LayoutFR/Transitions/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Intégration | DATALYS Consulting",

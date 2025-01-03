@@ -4,6 +4,26 @@ import { Accordion, AccordionItem } from "@nextui-org/accordion"
 import { motion } from "framer-motion"
 import { useRef } from "react"
 
+const ArrowBox = () => (
+  <div className="mr-3 flex h-6 w-6 items-center justify-center rounded-md bg-primary/20">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-primary"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  </div>
+)
+
 const Services = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -66,7 +86,7 @@ const Services = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="pr-[10px] text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-2.9px] md:text-[18px]"
+                      className="pr-[10px] text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-2.5px] md:[word-spacing:-2.8px] md:text-[18px]"
                     >
                       Nos interventions d’audit sur le volet Infrastructure
                       système et Cloud permettent d’évaluer dans un contexte
@@ -91,39 +111,66 @@ const Services = () => {
                       transition={{ delay: 0.2, duration: 0.5 }}
                       className="pr-[10px]"
                     >
-                      <div className="mb-1 text-justify text-base font-light leading-relaxed text-[#5793C7] [word-spacing:-1.8px] md:text-[17px]">
-                        <p>
-                          - La <span className="font-bold">maturité du SI</span>
-                        </p>
-                        <p>
-                          - La{" "}
-                          <span className="font-bold">
-                            maturité des utilisateurs finaux
-                          </span>{" "}
-                          de l’environnement
-                        </p>
-                        <p>
-                          - Les configurations des services et de la sécurité
-                          des applications
-                        </p>
-                        <p>
-                          - Les contrôles relatifs aux processus métiers portés
-                          par les applications
-                          <p>- La </p>
-                          <span className="font-bold">
-                            conformité des Systèmes d’Information
-                          </span>{" "}
-                          vis-à-vis des exigences de normalisation
-                        </p>
-                        <p>
-                          -{" "}
-                          <span className="font-bold">
-                            L’Environnement du Cloud :
-                          </span>{" "}
-                          de l’aspect financier à l’aspect technique contenant
-                          le design des solutions Cloud, le dimensionnement des
-                          ressources, la supervision, et bien d’autres.
-                        </p>
+                      <div className="mb-1 text-justify text-base font-light leading-relaxed text-[#5793C7] [word-spacing:-3.1px] md:[word-spacing:-1.8px] md:text-[17px]">
+                        <div className="space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                La maturité du SI
+                              </span>
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                La maturité des utilisateurs finaux
+                              </span>{" "}
+                              de l'environnement
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Les configurations des services et de la sécurité
+                              des applications
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Les contrôles relatifs aux processus métiers
+                              portés par les applications
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                La conformité des Systèmes d'Information
+                              </span>{" "}
+                              vis-à-vis des exigences de normalisation
+                            </p>
+                          </div>
+
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              <span className="font-bold">
+                                L'Environnement du Cloud :
+                              </span>{" "}
+                              de l'aspect financier à l'aspect technique
+                              contenant le design des solutions Cloud, le
+                              dimensionnement des ressources, la supervision, et
+                              bien d'autres.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                       <div className="text-justify text-base font-light leading-relaxed text-[#5793C7] [word-spacing:-1.8px] md:text-[17px]">
                         <p>
@@ -206,39 +253,108 @@ const Services = () => {
                       className="pr-[10px]"
                     >
                       <div className="mb-1 text-base font-light text-[#5793C7]">
-                        <p>- Audit d’architecture</p>
-                        <p>- Analyse de la maturité du réseau</p>
-                        <p>- Audit des configurations</p>
-                        <p>- Analyse de performance</p>
-                        <p>- Analyse de résilience</p>
-                        <p>- Tests de charge</p>
+                        <div className="space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Audit d'architecture</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Analyse de la maturité du réseau
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Audit des configurations</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Analyse de performance</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Analyse de résilience</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Tests de charge</p>
+                          </div>
+                        </div>
                       </div>
                       <div className="text-base font-light text-[#5793C7]">
                         <span className="my-1 font-bold">
                           Audit de sécurité des SI
                         </span>{" "}
-                        <p>
-                          - Inspection des firewall et équipements de sécurité
-                        </p>
-                        <p>- Analyse de la segmentation du réseau</p>
-                        <p>
-                          - Audit de conformité (ISO 27001, RGPD, PCI DSS, etc.)
-                        </p>
-                        <p>- Audit de vulnérabilités</p>
-                        <p>- Audit des politiques de sécurité</p>
-                        <p>- Analyse des applications web et mobiles</p>
-                        <p>- Tests d’intrusion (Pentesting)</p>
-                        <p>- Audit des accès et des identités</p>
+                        <div className="mt-4 space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Inspection des firewall et équipements de sécurité
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Analyse de la segmentation du réseau
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Audit de conformité (ISO 27001, RGPD, PCI DSS,
+                              etc.)
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Audit de vulnérabilités</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Audit des politiques de sécurité
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Analyse des applications web et mobiles
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Tests d'intrusion (Pentesting)
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Audit des accès et des identités
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-base font-light text-[#5793C7]">
+                      <div className="mt-4 text-base font-light text-[#5793C7]">
                         <span className="my-1 font-bold">
                           Audit de la Gouvernance et gestion des risques
                         </span>{" "}
-                        <p>- Audit de la Gestion des risques IT</p>
-                        <p>
-                          - Audit de continuité des activités et plans de
-                          reprise
-                        </p>
+                        <div className="mt-4 space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Audit de la Gestion des risques IT
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Audit de continuité des activités et plans de
+                              reprise
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
@@ -298,50 +414,93 @@ const Services = () => {
                       className="pr-[10px]"
                     >
                       <div className="mb-1 text-base font-light text-[#5793C7]">
-                        <p>- Efficacité énergétique</p>
-                        <p>- Sources d’énergie</p>
-                        <p>- Systèmes de refroidissement</p>
-                        <p>- Supervision et Monitoring énergétique</p>
+                        <div className="space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Efficacité énergétique</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">Sources d'énergie</p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Systèmes de refroidissement
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Supervision et Monitoring énergétique
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-base font-light text-[#5793C7]">
+                      <div className="mt-4 text-base font-light text-[#5793C7]">
                         <span className="my-1 font-bold">
                           Audit de la Résilience des Systèmes
                         </span>{" "}
-                        <p>
-                          - Conception de l’alimentation électrique /
-                          Vérification des infrastructures de redondance
-                        </p>
-                        <p>
-                          - Analyse des systèmes de sauvegarde de données pour
-                          la continuité de service en cas d’incident
-                        </p>
-                        <p>- Analyse de l’Optimisation des réseaux</p>
+                        <div className="mt-4 space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Conception de l'alimentation électrique /
+                              Vérification des infrastructures de redondance
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Analyse des systèmes de sauvegarde de données pour
+                              la continuité de service en cas d'incident
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p className="flex-1">
+                              Analyse de l'Optimisation des réseaux
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-justify text-base font-light text-[#5793C7]">
-                        <span className="my-1 font-bold">
+                      <div className="mt-4 text-justify text-base font-light text-[#5793C7]">
+                        <span className="mb-4 font-bold">
                           Gestion de la Sécurité et de la Conformité
                         </span>{" "}
-                        <p>
-                          - S’assurer que le Data Center respecte les normes en
-                          vigueur comme ISO 27001 (gestion de la sécurité de
-                          l’information), ISO 50001 (gestion de l’énergie) ou la
-                          norme TIA-942 pour l’infrastructure des Data Centers
-                          ainsi que les exigences de l’Uptime Institute
-                        </p>
-                        <p>
-                          - L’évaluation des mesures de sécurité physiques et
-                          logiques (contrôles d’accès, caméras de surveillance,
-                          etc.)
-                        </p>
-                        <p>- Chiffrement et protection des données</p>
-                        <p className="mt-1">
+                        <div className="mt-4 space-y-4">
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p>
+                              S'assurer que le Data Center respecte les normes
+                              en vigueur comme ISO 27001 (gestion de la sécurité
+                              de l'information), ISO 50001 (gestion de
+                              l'énergie) ou la norme TIA-942 pour
+                              l'infrastructure des Data Centers ainsi que les
+                              exigences de l'Uptime Institute
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p>
+                              L'évaluation des mesures de sécurité physiques et
+                              logiques (contrôles d'accès, caméras de
+                              surveillance, etc.)
+                            </p>
+                          </div>
+                          <div className="flex items-start">
+                            <ArrowBox />
+                            <p>Chiffrement et protection des données</p>
+                          </div>
+                        </div>
+                        <p className="mt-2">
                           En menant un Audit détaillé et en se concentrant sur
                           ces aspects, nous pourrons renforcer{" "}
-                          <span className="font-bold">l’efficacité</span> ,{" "}
+                          <span className="font-bold">l'efficacité</span> ,{" "}
                           <span className="font-bold">la sécurité</span> et{" "}
                           <span className="font-bold">la durabilité</span> des
                           infrastructures (Energie et Data Center) tout en
-                          s’assurant d’une conformité aux normes et une gestion
+                          s'assurant d'une conformité aux normes et une gestion
                           optimale des ressources énergétiques pout tous nos
                           clients.
                         </p>

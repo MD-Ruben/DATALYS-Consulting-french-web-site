@@ -665,66 +665,120 @@ const featuresData: Feature[] = [
     id: 1,
     icon: (
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         width="173"
         height="144"
-        viewBox="0 0 512 512"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 173 144"
+        fill="none"
       >
-        <circle fill="#0F7986" cx="256" cy="256" r="256" />
+        {/* Cloud Shape */}
+        <defs>
+          <linearGradient
+            id="cloudGradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="#5AAED9" />
+            <stop offset="100%" stopColor="#FFFFFF" />
+          </linearGradient>
+        </defs>
         <path
+          d="M116 72C116 57 103 46 88 46C80 46 73 49 68 55C63 51 56 50 50 54C42 60 38 72 43 82C40 84 37 86 34 89C29 97 29 108 34 116C39 123 45 128 53 128C61 128 67 124 71 118C78 121 86 118 92 118C98 118 104 120 109 124C116 126 122 126 128 124C133 122 136 118 138 114C144 106 143 96 137 88C134 82 126 76 116 72Z"
+          fill="url(#cloudGradient)"
+        />
+
+        {/* Secure Shield */}
+        <polygon
+          points="82,45 88,30 94,45 88,60"
+          fill="#F99D1C"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text
+          x="88"
+          y="48"
+          fontSize="12"
+          textAnchor="middle"
           fill="#FFFFFF"
-          d="M76.928,193.196h133.374l35.148,35.147V409.48H76.928V193.196z"
+          fontWeight="bold"
+        >
+          SEC
+        </text>
+
+        {/* Arrow representing migration */}
+        <line
+          x1="88"
+          y1="72"
+          x2="88"
+          y2="102"
+          stroke="#5AAED9"
+          strokeWidth="3"
+          strokeLinecap="round"
         />
-        <path
-          fill="#C9CACC"
-          d="M102.338,239.581h117.698v2.654H102.338V239.581z M102.338,268.172L102.338,268.172h117.698v2.657H102.338V268.172z M102.338,273.097L102.338,273.097h117.698v2.655H102.338V273.097z M102.338,278.02L102.338,278.02h117.698v2.655H102.338V278.02z M102.338,282.944L102.338,282.944h117.703v2.655H102.338V282.944z M102.338,244.503L102.338,244.503h117.698v2.656H102.338V244.503z M102.338,249.427L102.338,249.427h117.698v2.656H102.338V249.427z M102.338,254.351L102.338,254.351h117.703v2.655H102.338V254.351z M102.337,259.275L102.337,259.275h90.156v2.655h-90.156V259.275z M102.337,287.867L102.337,287.867h90.156v2.656h-90.156V287.867z"
+        <polygon points="86,98 88,102 90,98" fill="#5AAED9" />
+
+        {/* Outer Cloud Nodes */}
+        <circle cx="60" cy="40" r="10" fill="#FFCC00" />
+        <text x="60" y="44" fontSize="8" textAnchor="middle" fill="#FFFFFF">
+          DB
+        </text>
+        <circle cx="116" cy="40" r="10" fill="#FFCC00" />
+        <text x="116" y="44" fontSize="8" textAnchor="middle" fill="#FFFFFF">
+          API
+        </text>
+        <circle cx="116" cy="100" r="10" fill="#FFCC00" />
+        <text x="116" y="104" fontSize="8" textAnchor="middle" fill="#FFFFFF">
+          FE
+        </text>
+        <circle cx="60" cy="100" r="10" fill="#FFCC00" />
+        <text x="60" y="104" fontSize="8" textAnchor="middle" fill="#FFFFFF">
+          Cache
+        </text>
+
+        {/* Cloud Connecting Lines */}
+        <line
+          x1="88"
+          y1="60"
+          x2="60"
+          y2="40"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
         />
-        <path
-          fill="#FAD24D"
-          d="M210.303,193.196v35.147h35.147L210.303,193.196z"
+        <line
+          x1="88"
+          y1="60"
+          x2="116"
+          y2="40"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
         />
-        <path
-          fill="#F7FAFA"
-          d="M245.45,263.488v-35.145h-35.145L245.45,263.488z"
+        <line
+          x1="88"
+          y1="60"
+          x2="116"
+          y2="100"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
         />
-        <path
-          fill="#C9CACC"
-          d="M102.338,304.838h117.698v2.655H102.338V304.838z M102.338,333.429L102.338,333.429h117.698v2.656H102.338V333.429z M102.338,338.353L102.338,338.353h117.698v2.656H102.338V338.353z M102.338,343.277L102.338,343.277h117.698v2.655H102.338V343.277z M102.338,348.2L102.338,348.2h117.703v2.655H102.338V348.2z M102.338,309.761L102.338,309.761h117.698v2.655H102.338V309.761z M102.338,314.684L102.338,314.684h117.698v2.655H102.338V314.684z M102.338,319.608L102.338,319.608h117.703v2.655H102.338V319.608z M102.337,324.531L102.337,324.531h90.156v2.655h-90.156V324.531z M102.337,353.123L102.337,353.123h90.156v2.656h-90.156V353.123z"
-        />
-        <path
-          fill="#FFFFFF"
-          d="M268.332,80.185h133.376l35.147,35.147V296.47H268.332V80.185z"
-        />
-        <path
-          fill="#C9CACC"
-          d="M293.742,126.569H411.44v2.655H293.742V126.569z M293.742,155.161L293.742,155.161H411.44v2.656H293.742V155.161z M293.742,160.084L293.742,160.084H411.44v2.656H293.742V160.084z M293.742,165.009L293.742,165.009H411.44v2.655H293.742V165.009z M293.742,169.932L293.742,169.932h117.704v2.655H293.742V169.932z M293.742,131.492L293.742,131.492H411.44v2.655H293.742V131.492z M293.742,136.417L293.742,136.417H411.44v2.655H293.742V136.417z M293.742,141.34L293.742,141.34h117.704v2.655H293.742V141.34z M293.741,146.263L293.741,146.263h90.156v2.655h-90.156V146.263z M293.741,174.855L293.741,174.855h90.156v2.656h-90.156V174.855z"
-        />
-        <path
-          fill="#FF5B62"
-          d="M401.707,80.185v35.147h35.147L401.707,80.185z"
-        />
-        <path
-          fill="#F7FAFA"
-          d="M436.854,150.477v-35.144h-35.145L436.854,150.477z"
-        />
-        <path
-          fill="#C9CACC"
-          d="M293.742,191.826H411.44v2.654H293.742V191.826z M293.742,220.418L293.742,220.418H411.44v2.657H293.742V220.418z M293.742,225.342L293.742,225.342H411.44v2.655H293.742V225.342z M293.742,230.265L293.742,230.265H411.44v2.655H293.742V230.265z M293.742,235.189L293.742,235.189h117.704v2.655H293.742V235.189z M293.742,196.749L293.742,196.749H411.44v2.656H293.742V196.749z M293.742,201.672L293.742,201.672H411.44v2.656H293.742V201.672z M293.742,206.595L293.742,206.595h117.704v2.655H293.742V206.595z M293.741,211.52L293.741,211.52h90.156v2.655h-90.156V211.52z M293.741,240.111L293.741,240.111h90.156v2.656h-90.156V240.111z"
-        />
-        <path
-          fill="#FAD24D"
-          d="M348.11,337.22h-46.001v11.5L267.8,329.227l34.309-19.492v11.5h46.001V337.22z"
-        />
-        <path
-          fill="#FF5B62"
-          d="M165.671,166.272h46.001v11.5l34.309-19.493l-34.309-19.492v11.5h-46.001V166.272z"
+        <line
+          x1="88"
+          y1="60"
+          x2="60"
+          y2="100"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
         />
       </svg>
     ),
     title: "Migration Sécurisé dans le Cloud",
     paragraph:
-      "Révolutionnez vos processus avec l’intelligence artificielle et accélérez vos résultats. Passez à l’étape suivante avec des solutions d’IA sur mesure adaptées à vos besoins.",
+      "Assurez une transition fluide et sécurisée vers le cloud tout en minimisant les risques. Modernisez vos infrastructures pour plus d’agilité, de performance et de sécurité.",
   },
   {
     id: 1,
@@ -944,6 +998,371 @@ const featuresData: Feature[] = [
     title: "Optimisation Énergétique",
     paragraph:
       "Réduisez votre consommation tout en augmentant vos performances grâce à des solutions d’optimisation énergétique. Contribuez à un avenir plus vert et à des économies substantielles.",
+  },
+  {
+    id: 1,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="173"
+        height="144"
+        viewBox="0 0 173 144"
+        fill="none"
+      >
+        {/* Gradient Definitions */}
+        <defs>
+          <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#F99D1C" />
+            <stop offset="100%" stopColor="#5AAED9" />
+          </linearGradient>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFCC00" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Background Glow */}
+        <circle cx="86.5" cy="72" r="50" fill="url(#coreGlow)" />
+
+        {/* Central Core */}
+        <circle
+          cx="86.5"
+          cy="72"
+          r="16"
+          fill="url(#nodeGradient)"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text
+          x="86.5"
+          y="76"
+          fontSize="10"
+          textAnchor="middle"
+          fill="#FFFFFF"
+          fontWeight="bold"
+        >
+          Core
+        </text>
+
+        {/* Connecting Curves */}
+        <path
+          d="M86.5 72 Q65 50 40 36"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M86.5 72 Q108 50 133 36"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M86.5 72 Q108 94 133 108"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M86.5 72 Q65 94 40 108"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+        />
+
+        {/* Outer Nodes */}
+        <circle
+          cx="40"
+          cy="36"
+          r="12"
+          fill="#5AAED9"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text x="40" y="40" fontSize="7" textAnchor="middle" fill="#FFFFFF">
+          API
+        </text>
+        <circle
+          cx="133"
+          cy="36"
+          r="12"
+          fill="#5AAED9"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text x="133" y="40" fontSize="7" textAnchor="middle" fill="#FFFFFF">
+          DB
+        </text>
+        <circle
+          cx="133"
+          cy="108"
+          r="12"
+          fill="#5AAED9"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text x="133" y="112" fontSize="7" textAnchor="middle" fill="#FFFFFF">
+          FE
+        </text>
+        <circle
+          cx="40"
+          cy="108"
+          r="12"
+          fill="#5AAED9"
+          stroke="#F99D1C"
+          strokeWidth="2"
+        />
+        <text x="40" y="112" fontSize="7" textAnchor="middle" fill="#FFFFFF">
+          Cache
+        </text>
+      </svg>
+    ),
+    title: "Réseaux Intuitifs",
+    paragraph:
+      "Utilisation de technologies avancées, telles que l'intelligence artificielle (IA), l'apprentissage automatique et l'automatisation, pour optimiser la gestion et le fonctionnement du réseau.",
+  },
+  {
+    id: 1,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="173"
+        height="144"
+        viewBox="0 0 173 144"
+        fill="none"
+      >
+        {/* Background Gradient Circle */}
+        <defs>
+          <radialGradient id="backgroundGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#5AAED9" />
+            <stop offset="100%" stopColor="#F99D1C" />
+          </radialGradient>
+        </defs>
+        <circle
+          cx="86.5"
+          cy="72"
+          r="70"
+          fill="url(#backgroundGradient)"
+          opacity="0.2"
+        />
+
+        {/* Central Gear */}
+        <path
+          d="M86.5 60L92.5 63L96 72L92.5 81L86.5 84L80.5 81L77 72L80.5 63L86.5 60Z"
+          fill="#FFCC00"
+        />
+        <circle cx="86.5" cy="72" r="6" fill="#FFFFFF" />
+
+        {/* Nodes with Glow */}
+        <circle cx="86.5" cy="12" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="147.5" cy="45" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="147.5" cy="99" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="86.5" cy="132" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="25.5" cy="99" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="25.5" cy="45" r="8" fill="#5AAED9">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* Connecting Lines */}
+        <line
+          x1="86.5"
+          y1="72"
+          x2="86.5"
+          y2="12"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="147.5"
+          y2="45"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="147.5"
+          y2="99"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="86.5"
+          y2="132"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="25.5"
+          y2="99"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="25.5"
+          y2="45"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+      </svg>
+    ),
+    title: "Automatisation du réseau",
+    paragraph:
+      "Utilisation de logiciels et d'outils pour gérer, configurer, surveiller et déployer des ressources réseau de manière automatique, réduisant ainsi la nécessité d'intervention manuelle.",
+  },
+  {
+    id: 1,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="173"
+        height="144"
+        viewBox="0 0 173 144"
+        fill="none"
+      >
+        {/* Background Glow */}
+        <defs>
+          <radialGradient id="centralGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#5AAED9" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="86.5" cy="72" r="60" fill="url(#centralGlow)" />
+
+        {/* Central Element (Server) */}
+        <rect
+          x="66.5"
+          y="52"
+          width="40"
+          height="40"
+          rx="8"
+          fill="#5AAED9"
+          stroke="#F99D1C"
+          strokeWidth="2"
+          filter="url(#shadow)"
+        />
+        <rect x="74.5" y="58" width="24" height="4" rx="2" fill="#FFFFFF" />
+        <rect x="74.5" y="65" width="24" height="4" rx="2" fill="#FFFFFF" />
+        <rect x="74.5" y="72" width="24" height="4" rx="2" fill="#FFFFFF" />
+
+        {/* Outer Nodes with Labels */}
+        <circle cx="134" cy="36" r="12" fill="#F99D1C" />
+        <text x="127" y="40" fontSize="8" fill="#FFFFFF">
+          DB
+        </text>
+        <circle cx="39" cy="36" r="12" fill="#F99D1C" />
+        <text x="32" y="40" fontSize="8" fill="#FFFFFF">
+          API
+        </text>
+        <circle cx="134" cy="108" r="12" fill="#F99D1C" />
+        <text x="125" y="112" fontSize="8" fill="#FFFFFF">
+          FE
+        </text>
+        <circle cx="39" cy="108" r="12" fill="#F99D1C" />
+        <text x="30" y="112" fontSize="8" fill="#FFFFFF">
+          Cache
+        </text>
+
+        {/* Connection Lines */}
+        <line
+          x1="86.5"
+          y1="72"
+          x2="134"
+          y2="36"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="134"
+          y2="108"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="39"
+          y2="108"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+        <line
+          x1="86.5"
+          y1="72"
+          x2="39"
+          y2="36"
+          stroke="#FFCC00"
+          strokeWidth="2"
+          strokeDasharray="4"
+        />
+      </svg>
+    ),
+    title: "Déploiement de Solutions Complexes",
+    paragraph:
+      "Simplifiez l’implémentation de vos projets les plus ambitieux grâce à une expertise éprouvée. Bénéficiez d’un déploiement maîtrisé pour des solutions performantes et adaptées à vos défis.",
   },
 ]
 export default featuresData
