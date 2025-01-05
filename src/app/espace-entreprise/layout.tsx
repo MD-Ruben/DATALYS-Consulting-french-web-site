@@ -1,13 +1,9 @@
-"use client"
+"use client";
+
+import React from "react";
 
 export default function EspaceEntrepriseLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <div className="min-h-screen">
-      {children}
-    </div>
-  )
-} 
+}: React.PropsWithChildren<{}>) {
+  return <div className="min-h-screen">{children}</div>;
+}

@@ -23,10 +23,8 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center">
                   <a
-                    href="javascript:;"
-                    aria-label="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
@@ -43,10 +41,8 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="javascript:;"
-                    aria-label="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
@@ -59,10 +55,8 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="javascript:;"
-                    aria-label="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
                     className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
