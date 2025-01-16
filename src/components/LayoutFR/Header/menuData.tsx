@@ -42,7 +42,7 @@ const menuData: Menu[] = [
     id: 44,
     title: "Espace Entreprise",
     path: "/espace-entreprise",
-    newTab: true,
+    newTab: false,
   },
   {
     id: 4,

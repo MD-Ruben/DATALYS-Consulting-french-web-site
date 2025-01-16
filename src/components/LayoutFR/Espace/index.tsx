@@ -214,7 +214,7 @@ const EspaceEntreprise: React.FC = () => {
         <div className="absolute bottom-0 right-0 h-52 w-56 rounded-full border-4 bg-amber-200 z-10 hidden md:block">
           <div className="mt-8 hidden text-center md:block">
             <Link
-              className="text-xl font-bold text-blue-500 hover:text-blue-400 transition-colors"
+              className="text-[17px] font-bold text-blue-500 hover:text-blue-400 transition-colors"
               href="https://applicationweb.datalysconsulting.com/"
               rel="noopener noreferrer"
             >

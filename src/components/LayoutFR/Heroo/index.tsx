@@ -193,7 +193,7 @@ const Hero = () => {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.5 }}
-                          className="h-full w-full cursor-pointer rounded-full transition-all duration-500 ease-in-out bg-[#2F5075] p-4 shadow-lg"
+                          className="h-full w-full cursor-pointer rounded-xl transition-all duration-500 ease-in-out p-4"
                         />
                       </div>
                       {/* <button

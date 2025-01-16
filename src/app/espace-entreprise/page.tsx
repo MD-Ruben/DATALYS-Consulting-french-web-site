@@ -1,4 +1,5 @@
 import Breadcrumb from "@/components/LayoutFR/Common/Breadcrumb";
+import CorporateEspace from "@/components/LayoutFR/CorporateEspace";
 import Espace from "@/components/LayoutFR/Espace";
 
 import { Metadata } from "next";
@@ -17,7 +18,8 @@ const EspacePage = () => {
         description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       /> */}
 
-      <Espace />
+      {/* <Espace /> */}
+      <CorporateEspace />
     </>
   );
 };
