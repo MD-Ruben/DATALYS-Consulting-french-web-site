@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      {/* <Breadcrumb 
+      <Breadcrumb 
         pageName="Audit"
-        description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
-      /> */}
+        // description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
+      />
       <AboutAudit />
       <DomainSection />
       <RayonIntervention />

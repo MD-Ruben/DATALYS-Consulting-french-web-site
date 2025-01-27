@@ -2,14 +2,14 @@ import Link from "next/link";
 
 const Breadcrumb = ({
   pageName,
-  description,
+  // description,
 }: {
   pageName: string;
-  description: string;
+  // description: string;
 }) => {
   return (
     <>
-      <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px]">
+      <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px] -mb-24 md:mb-10 lg:-mb-0 mt-8">
         <div className="container">
           <div className="-mx-4 flex flex-col">
             <div className="w-full px-4">
@@ -17,9 +17,9 @@ const Breadcrumb = ({
                 <h1 className="mb-5 text-2xl font-bold text-black dark:text-white sm:text-3xl">
                   {pageName}
                 </h1>
-                <p className="text-base leading-relaxed font-light text-slate-300">
+                {/* <p className="text-base leading-relaxed font-light text-slate-300">
                   {description}
-                </p>
+                </p> */}
               </div>
             </div>
             {/* <div className="w-full px-4">

@@ -16,10 +16,10 @@ const NosIntegrations = () => {
   return (
     <section className="relative py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-14 max-w-[560px] text-center">
+        <div className="mx-auto mb-14 max-w-[600px] text-center">
           <motion.h2
             initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 20, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
             className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]"
@@ -32,7 +32,7 @@ const NosIntegrations = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative mx-auto max-w-[1200px]"
+          className="relative mx-auto max-w-screen"
         >
           <Swiper
             breakpoints={{
@@ -45,7 +45,7 @@ const NosIntegrations = () => {
                 spaceBetween: 20,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
                 spaceBetween: 30,
               },
             }}

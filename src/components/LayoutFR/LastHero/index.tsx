@@ -8,7 +8,7 @@ const LastHero = () => {
     const slides = [
         {
             id: 1,
-            image: "/images/slider/Infra.jpg",
+            image: "/images/slider/new/infrastructure.jpg",
             title: "Bienvenue chez",
             title2: "DATALYS",
             title3: "Infrastructure & systèmes",
@@ -31,9 +31,9 @@ const LastHero = () => {
         },
         {
             id: 3,
-            image: "/images/slider/DC_Accueil.jpg",
+            image: "/images/slider/new/datacenter1.jpg",
             title2: "DATALYS",
-            title3: "Data Center & Énergie",
+            title3: "Data Center",
             description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
@@ -42,7 +42,18 @@ const LastHero = () => {
         },
         {
             id: 4,
-            image: "/images/slider/Reseau_Accueil.jpg",
+            image: "/images/slider/new/energie.jpg",
+            title2: "DATALYS",
+            title3: "Énergie",
+            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            buttons: [
+                { text: "Parler à un Expert", link: "/contact" },
+                { text: "Demander un Devis", link: "/contact" }
+            ]
+        },
+        {
+            id: 5,
+            image: "/images/slider/new/reseau&securite2.jpg",
             title2: "DATALYS",
             title3: "Réseau & Sécurité",
             description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",

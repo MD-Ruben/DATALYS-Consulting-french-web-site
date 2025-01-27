@@ -10,7 +10,7 @@ const AboutIntegration = () => {
 
   return (
     <>
-      <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:mt-[105px]">
+      <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:-mt-[105px]">
         <div className="container">
           <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
             <div className="-mx-4 flex flex-wrap items-center">
@@ -99,14 +99,14 @@ const AboutIntegration = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-[500px] rounded-full bg-[#294666] p-6 shadow-lg"
+                className="relative mx-auto max-w-[600px] rounded-full bg-[#294666] p-6 shadow-lg"
               >
                 <img
                   src="/images/about/arrows.png"
                   alt="About Us Image"
-                  width={500}
-                  height={500}
-                  className="rounded-full"
+                  // width={500}
+                  // height={500}
+                  className="rounded-full object-cover"
                 />
               </motion.div>
               </div>

@@ -85,7 +85,7 @@ const Events = () => {
   };
 
   return (
-    <section className="relative z-10 py-16 md:py-20 lg:py-28 mt-[45px] md:mt-[105px]">
+    <section className="relative z-10 py-16 md:py-20 lg:py-28 mt-[45px] md:-mt-[105px]">
       <div className="container">
         <div className="relative z-10 mx-auto mb-14 max-w-[760px] text-center">
           {/* <div className="bottom-30 absolute hidden w-full px-4 md:block">

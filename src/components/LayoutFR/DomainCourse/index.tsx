@@ -9,7 +9,7 @@ import Link from "next/link"
 import { useRef } from "react" 
 
 const ArrowBox = () => (
-  <div className="mr-3 flex h-6 w-6 items-center justify-center rounded-md bg-primary/20">
+  <div className="mr-3 flex h-6 w-6 items-center justify-center rounded-md bg-yellow/20">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -20,7 +20,7 @@ const ArrowBox = () => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="text-primary"
+      className="text-yellow"
     >
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
@@ -160,7 +160,7 @@ const Services = () => {
                           Nos Formations
                         </h2>
 
-                        <div className="space-y-4 text-justify text-base font-light text-[#5793C7]">
+                        <div className="space-y-4 text-justify text-base font-light text-yellow">
                           <div className="flex items-start">
                             <ArrowBox />
                             <p className="flex-1">
