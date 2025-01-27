@@ -146,7 +146,7 @@ const LastHero = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 }}
-                                    className="mb-9 text-base font-extralight !leading-relaxed dark:text-white sm:text-lg md:text-xl"
+                                    className="mb-9 text-base font-extralight text-center !leading-relaxed dark:text-white sm:text-lg md:text-xl"
                                 >
                                     {slides[currentIndex].description}
                                 </motion.p>
