@@ -99,19 +99,21 @@ const LastHero = () => {
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
         >
-            <AnimatePresence initial={false} custom={currentIndex}>
+            <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                     key={currentIndex}
-                    initial={{ opacity: 0, x: 1000 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -1000 }}
-                    transition={{ duration: 0.5 }}
+                    initial={{ opacity: 0.5 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0.5 }}
+                    transition={{ duration: 0.7 }}
                     className="absolute w-full h-full"
                 >
                     <div
-                        className="w-full h-full bg-cover bg-center relative"
+                        className="w-full h-full bg-cover bg-center bg-no-repeat relative transition-all duration-700"
                         style={{ 
-                            backgroundImage: `url(${slides[currentIndex].image})`
+                            backgroundImage: `url(${slides[currentIndex].image})`,
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover'
                         }}
                     >
                         <div className="absolute inset-0 bg-black bg-opacity-40">
