@@ -11,9 +11,9 @@ const AboutFormations = () => {
     <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:-mt-[105px]">
       <div className="container">
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
+          <div className="-mx-4 flex flex-wrap items-center -mt-0 lg:-mt-8">
             <div
-              className="font-Title w-full px-4 text-start lg:w-1/2"
+              className="font-Title w-full px-4 text-start lg:w-1/2 mb-10 lg:mb-0"
               ref={scrollRef}
             >
               {/* <h2 className="font-Title mb-4 text-start text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
@@ -75,16 +75,16 @@ const AboutFormations = () => {
             <div className="w-full px-4 lg:mr-0 lg:w-1/2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-[600px] rounded-full bg-[#294666] p-6 shadow-lg"
+                className="relative mx-auto max-w-[550px] rounded-full bg-[#294666] p-2 shadow-lg"
               >
-                <img
-                  src="/images/about/training.png"
-                  alt="About Us Image"
-                  // width={500}
-                  // height={500}
-                  className="rounded-full object-cover"
+                <Image
+                  src="/images/formations/formations.jpeg"
+                  alt="About Us Image" 
+                  width={600}
+                  height={600} 
+                  className="rounded-full"
                 />
               </motion.div>
             </div>

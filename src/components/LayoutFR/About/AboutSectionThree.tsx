@@ -30,19 +30,19 @@ const AboutSectionThree = () => {
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             {/* Image Section with Animation */}
-            <div className="w-full px-4 lg:w-1/2" ref={scrollRef}>
+            <div className="w-full px-4 lg:w-1/2 mb-10 lg:mb-0" ref={scrollRef}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-[500px] rounded-full bg-[#294666] p-4 shadow-lg"
+                className="relative mx-auto max-w-[550px] rounded-full bg-[#294666] p-2 shadow-lg"
               >
-                <img
-                  src="/images/about/pexels.jpg"
+                <Image
+                  src="/images/about/pppexels.jpg"
                   alt="About Us Image"
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={600}
                   className="rounded-full"
                 />
               </motion.div>
@@ -83,8 +83,8 @@ const AboutSectionThree = () => {
                 Fondé en 2023, par des Consultants engagés et passionnés de la
                 Digitalisation, Datalys Consulting est une Entreprise de Service
                 IT qui apporte une expertise réinventée. Nous sommes spécialisés
-                dans le Cloud, l’Infrastructure IT et les Réseaux & Sécurité :
-                Les sujets clés impactant le monde de l’IT et de la
+                dans le Cloud, l’Infrastructure IT et les réseaux & sécurités :
+                les sujets clés impactant le monde de l’IT et de la
                 Digitalisation.
               </motion.p>
 
@@ -97,7 +97,7 @@ const AboutSectionThree = () => {
               >
                 La transformation, la gestion d'infrastructures IT & cloud,
                 l'optimisation énergétique des Data Centers ainsi que le
-                déploiement efficace des systèmes de Réseau et Sécurité
+                déploiement efficace des systèmes de réseau et sécurité
                 informatique font partie de nos compétences de pointe. Chez
                 DATALYS, notre engagement est d'offrir des solutions innovantes
                 qui propulsent votre entreprise vers l'avenir numérique et dans

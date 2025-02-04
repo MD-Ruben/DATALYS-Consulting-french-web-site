@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import SectionTitle from "../Common/SectionTitle"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -28,7 +29,7 @@ const AboutSectionFour = () => {
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div
-              className="font-Title w-full px-4 text-start lg:w-1/2"
+              className="font-Title w-full px-4 text-start lg:w-1/2 mb-10 lg:mb-0"
               ref={scrollRef}
             >
               {/* <div className="absolute bottom-40 hidden w-full px-4 md:block">
@@ -50,8 +51,8 @@ const AboutSectionFour = () => {
                 Fondé en 2023, par des Consultants engagés et passionnés de la
                 Digitalisation, Datalys Consulting est une Entreprise de Service
                 IT qui apporte une expertise réinventée. Nous sommes
-                spécialisées dans le Cloud, l’Infrastructure IT et les Réseaux &
-                Sécurité : Les sujets clés impactant le monde de l’IT et de la
+                spécialisées dans le Cloud, l’Infrastructure IT et les réseaux &
+                sécurités : les sujets clés impactant le monde de l’IT et de la
                 Digitalisation. La transformation, la gestion d'infrastructures
                 IT & cloud, l'optimisation énergétique des Data Centers ainsi
                 que le déploiement efficace des systèmes de Réseau et Sécurité
@@ -71,11 +72,11 @@ const AboutSectionFour = () => {
                 Notre équipe dévouée travaille sans relâche pour concevoir des
                 environnements informatiques fiables, performants et
                 éco-responsables. Forts de notre expertise dans le cloud,
-                l'énergie, et les Réseaux & sécurité, nous réinventons notre
+                l'énergie, et les réseaux & sécurités, nous réinventons notre
                 expertise sur mesure de sorte à l’adapter à vos besoins
                 spécifiques. Chez DATALYS, l'innovation est au coeur de notre
                 ADN. Nous proposons à nos clients des solutions de nouvelles
-                générations ainsi que des bonnes pratiques pour leur fournir un
+                générations ainsi que de bonnes pratiques pour leur fournir un
                 avantage concurrentiel dans un monde en constante évolution.
               </motion.p>
 
@@ -87,7 +88,7 @@ const AboutSectionFour = () => {
                 className="text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.6px] md:text-lg"
               >
                 Travailler avec Datalys, c’est se faire accompagner par une
-                équipe dynamique, expérimentée, Agile, motivée, engagée et
+                équipe dynamique, expérimentée, agile, motivée, engagée et
                 passionnée ; capable de vous accompagner dans votre
                 transformation digitale, dans l’optimisation de votre
                 consommation énergétique, dans le renforcement de la robustesse
@@ -95,7 +96,7 @@ const AboutSectionFour = () => {
                 d’optimisations claires et précis de votre SI dans sa globalité.
                 Faites équipe avec nous pour façonner l'avenir de votre
                 entreprise. Bienvenue chez Datalys, nous sommes heureux de faire
-                ce chemin avec Vous.
+                ce chemin avec vous.
               </motion.p>
             </div>
 
@@ -105,13 +106,13 @@ const AboutSectionFour = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.5 }} 
-                className="relative mx-auto max-w-[600px] rounded-full bg-[#294666] p-4 shadow-lg"
+                className="relative mx-auto max-w-[550px] rounded-full bg-[#294666] p-2 shadow-lg"
               >
-                <img
-                  src="/images/about/pexels.jpg"
+                <Image
+                  src="/images/about/pppexels.jpg"
                   alt="About Us Image"
-                  // width={500}
-                  // height={500}
+                  width={600}
+                  height={600}
                   className="rounded-full object-cover"
                 />
               </motion.div>

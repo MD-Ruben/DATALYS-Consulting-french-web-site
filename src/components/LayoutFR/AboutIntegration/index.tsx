@@ -7,14 +7,14 @@ import Image from "next/image";
 
 const AboutIntegration = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
-
+ 
   return (
     <>
       <section className="pt-16 md:pt-20 lg:pt-28 mt-[45px] md:-mt-[105px]">
         <div className="container">
           <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
             <div className="-mx-4 flex flex-wrap items-center">
-              <div className="font-Title w-full px-4 text-start lg:w-1/2" ref={scrollRef}>
+              <div className="font-Title w-full px-4 text-start lg:w-1/2 mb-10 lg:mb-0" ref={scrollRef}>
                 {/* <div className="absolute bottom-40 hidden w-full px-4 md:block">
                   <div className="mx-auto max-w-[700px]">
                     <img
@@ -37,7 +37,7 @@ const AboutIntegration = () => {
                   la mise en place, en garantissant une configuration minutieuse
                   selon vos exigences spécifiques. Nos prestations couvrent un
                   large éventail de services, incluant l'intégration de
-                  solutions d'infrastructures systèmes, réseaux, sécurité, ainsi
+                  solutions d'infrastructures système, réseaux, sécurité, ainsi
                   que les énergies, datacenters, et le cloud.
               </motion.p>
 
@@ -82,16 +82,6 @@ const AboutIntegration = () => {
                   puissante et efficace, sur le marché, qui propulse votre
                   entreprise vers de nouveaux sommets.
               </motion.p>
-
-                <p className="mt-2 text-start text-base !leading-relaxed font-light text-slate-300 md:text-xl">
-                  <Link href="/contact" className="text-primary">
-                    Contactez-nous
-                  </Link>{" "}
-                  dès aujourd'hui pour discuter de votre projet. d'intégration.
-                  <Link href="/contact" className="text-primary mx-2">
-                    DEMANDER UN DEVIS
-                  </Link>
-                </p>
               </div>
 
               <div className="w-full px-4 lg:mr-0 lg:w-1/2" ref={scrollRef}>
@@ -99,13 +89,13 @@ const AboutIntegration = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-[600px] rounded-full bg-[#294666] p-6 shadow-lg"
+                className="relative mx-auto max-w-[550px] rounded-full bg-[#294666] p-2 shadow-lg"
               >
-                <img
-                  src="/images/about/arrows.png"
-                  alt="About Us Image"
-                  // width={500}
-                  // height={500}
+                <Image
+                  src="/images/integration/aaabout_integration.jpeg"
+                  alt="Integration Image" 
+                  width={600}
+                  height={600}
                   className="rounded-full object-cover"
                 />
               </motion.div>

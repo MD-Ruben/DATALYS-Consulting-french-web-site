@@ -14,7 +14,7 @@ const AboutAudit = () => {
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div
-              className="font-Title w-full px-4 text-start lg:w-1/2"
+              className="font-Title w-full px-4 text-start-mt-0 lg:-mt-20 lg:w-1/2 mb-10 lg:mb-0"
               ref={scrollRef}
             >
               {/* <div className="absolute bottom-40 hidden w-full px-4 md:block">
@@ -116,14 +116,14 @@ const AboutAudit = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-[600px] rounded-full bg-[#294666] p-6 shadow-lg" 
+                className="relative mx-auto max-w-[550px] rounded-full bg-[#294666] p-2 shadow-lg" 
               >
-                <img
-                  src="/images/audit/iStock-1048592652.jpg"
+                <Image
+                  src="/images/audit/iiiStock-1048592652.jpg"
                   alt="Audit Image"
-                  // width={500}
-                  // height={500}
-                  className="rounded-full object-cover"
+                  width={600}
+                  height={600}
+                  className="rounded-full object-cover" 
                 />
               </motion.div>
             </div>

@@ -17,7 +17,7 @@ const Page = () => {
     <>
       <Breadcrumb
         pageName="Boutique"
-        description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
+        // description="Infrastructure et analyse des données. Envisager de manière synergique des catalyseurs de changement ayant un impact sur les infrastructures flexibles."
       />
       <PageNotFound />
     </>

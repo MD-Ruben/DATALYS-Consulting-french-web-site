@@ -44,11 +44,17 @@ const menuData: Menu[] = [
     path: "/espace-entreprise",
     newTab: false,
   },
+  // {
+  //   id: 4,
+  //   title: "E-Commerce",
+  //   path: "https://store.datalysconsulting.com/",
+  //   newTab: true,
+  // },
   {
     id: 4,
     title: "E-Commerce",
-    path: "https://store.datalysconsulting.com/",
-    newTab: true,
+    path: "/boutique",
+    newTab: false,
   },
   {
     id: 5,

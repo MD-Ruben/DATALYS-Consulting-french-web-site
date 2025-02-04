@@ -12,7 +12,7 @@ const LastHero = () => {
             title: "Bienvenue chez",
             title2: "DATALYS",
             title3: "Infrastructure & systèmes",
-            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            description: "Redynamisez votre Infrastructure système, dégagez les points d’optimisation cruciaux.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
                 { text: "Demander un Devis", link: "/contact" }
@@ -23,7 +23,7 @@ const LastHero = () => {
             image: "/images/slider/Cloud_Accueil.PNG",
             title2: "DATALYS",
             title3: "Cloud",
-            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            description: "Bénéficiez de votre investissement dans le Cloud. Maîtrisez vos factures, simplifiez vos migrations dans le Cloud.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
                 { text: "Demander un Devis", link: "/contact" }
@@ -34,7 +34,7 @@ const LastHero = () => {
             image: "/images/slider/new/datacenter1.jpg",
             title2: "DATALYS",
             title3: "Data Center",
-            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            description: "Optez pour un Data center urbanisé et parfaitement structuré garantissant performance et sécurité du SI.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
                 { text: "Demander un Devis", link: "/contact" }
@@ -45,7 +45,7 @@ const LastHero = () => {
             image: "/images/slider/new/energie.jpg",
             title2: "DATALYS",
             title3: "Énergie",
-            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            description: "Réduisez votre dépense Énergétique par le choix de solutions Énergétiques normalisées.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
                 { text: "Demander un Devis", link: "/contact" }
@@ -56,7 +56,7 @@ const LastHero = () => {
             image: "/images/slider/new/reseau&securite2.jpg",
             title2: "DATALYS",
             title3: "Réseau & Sécurité",
-            description: "La donnée est aujourd'hui un moteur de croissance pour beaucoup d'entreprises.",
+            description: "La sécurité de votre SI est son maillon principal. Clarifiez vos architectures, optimisez vos règles de sécurité, facilitez l’administration de votre réseau.",
             buttons: [
                 { text: "Parler à un Expert", link: "/contact" },
                 { text: "Demander un Devis", link: "/contact" }

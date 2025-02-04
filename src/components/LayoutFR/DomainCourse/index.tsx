@@ -156,11 +156,11 @@ const Services = () => {
                           </div>
                         </div>
 
-                        <h2 className="mb-4 mt-8 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
+                        <h2 className="mb-4 mt-8 text-xl font-bold dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
                           Nos Formations
                         </h2>
 
-                        <div className="space-y-4 text-justify text-base font-light text-yellow">
+                        <div className="space-y-4 text-justify text-base font-light text-white">
                           <div className="flex items-start">
                             <ArrowBox />
                             <p className="flex-1">

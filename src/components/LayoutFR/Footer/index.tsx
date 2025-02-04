@@ -92,7 +92,7 @@ const Footer = () => {
                       href="/contact"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Filiale <span className="uppercase">Guinée </span>:
+                      Filiale <span className="uppercase">Guinée Conakry</span>:
                       Almamyah Rue 028 N°466 COMMUNE DE KALOUM
                     </Link>
                   </li>

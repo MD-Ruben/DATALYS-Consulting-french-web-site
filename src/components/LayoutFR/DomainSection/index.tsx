@@ -86,21 +86,21 @@ const Services = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="text-base text-justify [word-spacing:-4.6px] font-light text-slate-300 md:text-[18px]"
+                      className="text-base font-light text-slate-300 md:text-[18px] text-justify tracking-normal leading-relaxed"
                     >
-                      Nos interventions d’audit sur le volet Infrastructure
-                      système et Cloud permettent d’évaluer dans un contexte
-                      strictement professionnel et productif l’environnement
-                      global du SI. Cette évaluation permet d’identifier les
+                      Nos interventions d&apos;audit sur le volet Infrastructure
+                      système et Cloud permettent d&apos;évaluer dans un contexte
+                      strictement professionnel et productif l&apos;environnement
+                      global du SI. Cette évaluation permet d&apos;identifier les
                       optimisations tant sur le plan purement technique
-                      qu’organisationnel.
+                      qu&apos;organisationnel.
                     </motion.p>
                     <motion.h3
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.4, duration: 0.5 }}
-                      className="mb-7 mt-4 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                      className="mb-7 mt-4 text-xl font-bold dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
                     >
                       A cet effet, nous évaluons
                     </motion.h3>
@@ -111,7 +111,7 @@ const Services = () => {
                       transition={{ delay: 0.2, duration: 0.5 }}
                       className="pr-[10px] mt-3"
                     >
-                      <div className="mb-1 text-left text-base font-light leading-relaxed text-yellow [word-spacing:-3.1px] md:[word-spacing:-1.8px] md:text-[17px]">
+                      <div className="mb-1 text-left text-base font-light leading-relaxed text-white md:text-[17px]">
                         <div className="space-y-4">
                           <div className="flex items-start">
                             <ArrowBox />
@@ -172,19 +172,6 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="text-left text-base font-light leading-relaxed text-yellow [word-spacing:-1.8px] md:text-[17px]">
-                        <p>
-                          Notre vocation principale et de fournir à tout type de
-                          système d’information, les meilleurs pratiques et les
-                          meilleures sécurités afin de tirer profit au maximum
-                          des services, applications qui sont les nœuds du
-                          business.
-                        </p>
-                        <p>
-                          Notre offre d’audit Système Infra & Cloud s’étend bien
-                          sur la partie applicative que matérielle.
-                        </p>
-                      </div>
                     </motion.div>
                   </div>
                 </div>
@@ -225,23 +212,23 @@ const Services = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="pr-[10px] text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.3px] md:text-[18px]"
+                      className="pr-[10px] text-base font-light text-slate-300 md:text-[18px] text-justify tracking-normal leading-relaxed"
                     >
-                      L’audit réseau et sécurité joue un rôle crucial dans la
-                      protection des infrastructures informatiques d’une
-                      organisation. Son objectif est d’identifier les failles et
+                      L&apos;audit réseau et sécurité joue un rôle crucial dans la
+                      protection des infrastructures informatiques d&apos;une
+                      organisation. Son objectif est d&apos;identifier les failles et
                       les risques potentiels afin de garantir la sécurité, la
                       performance et la conformité des réseaux et des systèmes
-                      d’information. Nous proposons diverses offres de services
+                      d&apos;information. Nous proposons diverses offres de services
                       pour évaluer, renforcer et protéger les infrastructures
-                      réseau et sécurité des entreprises.
+                      réseaux et sécurités des entreprises.
                     </motion.p>
                     <motion.h3
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.4, duration: 0.5 }}
-                      className="mb-7 mt-4 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                      className="mb-7 mt-4 text-xl font-bold dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
                     >
                       Audit réseau
                     </motion.h3>
@@ -252,7 +239,7 @@ const Services = () => {
                       transition={{ delay: 0.2, duration: 0.5 }}
                       className="pr-[10px]"
                     >
-                      <div className="mb-1 text-left font-light text-yellow">
+                      <div className="mb-1 text-left font-light text-white">
                         <div className="space-y-4">
                           <div className="flex items-start">
                             <ArrowBox />
@@ -282,7 +269,7 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="text-left font-light text-yellow my-4">
+                      <div className="text-left font-light text-white my-4">
                         <span className="my-1 font-bold">
                           Audit de sécurité des SI
                         </span>{" "}
@@ -336,7 +323,7 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4 text-left font-light text-yellow">
+                      <div className="mt-4 text-left font-light text-white">
                         <span className="my-1 font-bold">
                           Audit de la Gouvernance et gestion des risques
                         </span>{" "}
@@ -390,10 +377,10 @@ const Services = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="pr-[10px] text-justify text-base font-light leading-relaxed text-slate-300 [word-spacing:-1.3px] md:text-[18px]"
+                      className="pr-[10px] text-base font-light text-slate-300 md:text-[18px] text-justify tracking-normal leading-relaxed"
                     >
                       Pour améliorer le positionnement de nos clients dans le
-                      cadre d’un audit du périmètre de l’Energie et du Data
+                      cadre d&apos;un audit du périmètre de l&apos;Energie et du Data
                       Center, nous partons sur une analyse globale qui regroupe
                       en tout point trois enjeux cruciaux à savoir :
                     </motion.p>
@@ -402,9 +389,9 @@ const Services = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: false }}
                       transition={{ delay: 0.4, duration: 0.5 }}
-                      className="mb-7 mt-4 text-xl font-bold dark:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                      className="mb-7 mt-4 text-xl font-bold dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
                     >
-                      Gestion de l’Énergie dans le Data Center
+                      Gestion de l&apos;Énergie dans le Data Center
                     </motion.h3>
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -413,7 +400,7 @@ const Services = () => {
                       transition={{ delay: 0.2, duration: 0.5 }}
                       className="pr-[10px]"
                     >
-                      <div className="mb-1 text-left font-light text-yellow">
+                      <div className="mb-1 text-left font-light text-white">
                         <div className="space-y-4">
                           <div className="flex items-start">
                             <ArrowBox />
@@ -438,7 +425,7 @@ const Services = () => {
                         </div>
                       </div>
                       {/* <div className="mt-4 text-base font-light text-[#5793C7]"> */}
-                      <div className="mt-4 text-left font-light text-yellow">
+                      <div className="mt-4 text-left font-light text-white">
                         <span className="my-1 font-bold">
                           Audit de la Résilience des Systèmes
                         </span>{" "}
@@ -465,7 +452,7 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4 text-left text-base font-light text-yellow">
+                      <div className="mt-4 text-left text-base font-light text-white">
                         <span className="mb-4 font-bold">
                           Gestion de la Sécurité et de la Conformité
                         </span>{" "}
@@ -494,17 +481,6 @@ const Services = () => {
                             <p>Chiffrement et protection des données</p>
                           </div>
                         </div>
-                        <p className="mt-2">
-                          En menant un Audit détaillé et en se concentrant sur
-                          ces aspects, nous pourrons renforcer{" "}
-                          <span className="font-bold">l'efficacité</span> ,{" "}
-                          <span className="font-bold">la sécurité</span> et{" "}
-                          <span className="font-bold">la durabilité</span> des
-                          infrastructures (Energie et Data Center) tout en
-                          s'assurant d'une conformité aux normes et une gestion
-                          optimale des ressources énergétiques pout tous nos
-                          clients.
-                        </p>
                       </div>
                     </motion.div>
                   </div>
