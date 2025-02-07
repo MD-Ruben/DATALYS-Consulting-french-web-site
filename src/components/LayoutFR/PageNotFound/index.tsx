@@ -65,12 +65,12 @@ const PageNotFound = () => {
             <h2 className="mb-6 bg-gradient-to-r from-primary to-[#f5c034] bg-clip-text text-6xl font-bold text-transparent">
               404
             </h2>
-            <h3 className="mb-4 text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300">
+            <h3 className="text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
               Bientôt disponible
             </h3>
-            <p className="mb-8 text-xl text-gray-600 dark:text-gray-400">
+            {/* <p className="mb-8 text-xl text-gray-600 dark:text-gray-400">
               {"Nous y travaillons pour vous offrir une meilleure expérience."}
-            </p>
+            </p> */}
           </motion.div>
 
           {/* <motion.div

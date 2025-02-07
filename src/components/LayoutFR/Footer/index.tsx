@@ -130,8 +130,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      target="_blank"
-                      href="https://applicationweb.datalysconsulting.com/"
+                      href="/espace-entreprise"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Espace entreprise
@@ -165,7 +164,7 @@ const Footer = () => {
                 <div className="flex items-center justify-start gap-2 space-y-4 sm:flex-row sm:space-y-0">
                   <div>
                     <Link
-                      href="https://store.datalysconsulting.com/"
+                      href="/boutique"
                       className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                     >
                       Commander maintenant
