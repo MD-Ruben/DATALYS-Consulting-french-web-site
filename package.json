@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp public/.htaccess out/.htaccess",
+    "build": "npm run optimize-images && next build && cp public/.htaccess out/.htaccess",
+    "optimize-images": "node scripts/optimize-images.js",
     "start": "NODE_ENV=production node server.ts",
     "lint": "next lint"
   },
@@ -49,9 +50,11 @@
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.33",
     "autoprefixer": "^10.4.17",
+    "glob": "^10.4.5",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.10",
     "terser-webpack-plugin": "^5.3.10",
     "typescript": "^5.3.3"
