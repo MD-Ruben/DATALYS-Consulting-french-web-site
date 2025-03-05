@@ -50,6 +50,14 @@ const Header = () => {
     return usePathName.includes('/notreexpertise/')
   }
 
+  // Fonction pour vérifier si un lien est actif
+  const isLinkActive = (path) => {
+    if (path === '/') {
+      return usePathName === path;
+    }
+    return usePathName.startsWith(path);
+  }
+
   // Ajouter cet état pour gérer l'ouverture du dropdown
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -120,10 +128,8 @@ const Header = () => {
                             target={menuItem.newTab ? "_blank" : "_self"}
                             rel={menuItem.newTab ? "noopener noreferrer" : ""}
                             className={`font-title flex py-2 text-sm font-semibold lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-[15px] ${
-                              usePathName === menuItem.path
+                              isLinkActive(menuItem.path)
                                 ? "text-primary dark:text-[#f5c034]"
-                                : menuItem.title === "Notre Expertise" && isExpertisePage()
-                                ? "text-[#f5c034]"
                                 : "text-dark hover:text-white dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
@@ -134,7 +140,7 @@ const Header = () => {
                             <p
                               onClick={() => handleSubmenu(index)}
                               className={`flex cursor-pointer items-center justify-between py-2 text-sm font-semibold lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-[15px] ${
-                                menuItem.title === "Notre Expertise" && isExpertisePage()
+                                isExpertisePage()
                                   ? "text-[#f5c034]"
                                   : "text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white"
                               }`}
@@ -160,7 +166,11 @@ const Header = () => {
                                 <Link
                                   href={submenuItem.path}
                                   key={index}
-                                  className="font-title block rounded py-2.5 text-sm font-semibold text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
+                                  className={`font-title block rounded py-2.5 text-sm font-semibold lg:px-3 ${
+                                    isLinkActive(submenuItem.path)
+                                      ? "text-[#f5c034]"
+                                      : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                  }`}
                                 >
                                   {submenuItem.title}
                                 </Link>

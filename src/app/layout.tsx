@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isEspaceEntreprise = pathname === '/espace-entreprise';
+  const isEspaceEntreprise = pathname.startsWith('/espace-entreprise');
 
   return (
     <html suppressHydrationWarning lang="en" className="dark">

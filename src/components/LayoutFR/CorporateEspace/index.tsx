@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const CorporateEspace = () => {
   return (
@@ -34,8 +35,24 @@ const CorporateEspace = () => {
         </div>
       </div>
 
+      {/* Back to Home Button */}
+      <div className="relative z-20 container mx-auto px-4 pt-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link href="/" className="inline-flex items-center px-4 py-2 bg-[#f5c034]/20 rounded-lg text-white hover:bg-[#f5c034]/30 hover:text-white transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Retour à l'accueil
+          </Link>
+        </motion.div>
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
+      <div className="relative z-10 container mx-auto px-4 py-8 md:py-16">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
           <motion.div
