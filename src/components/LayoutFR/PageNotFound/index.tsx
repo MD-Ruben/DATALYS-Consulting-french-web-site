@@ -55,17 +55,18 @@ const PageNotFound = () => {
 
   return (
     <main className="min-h-screen mt-10 md:-mt-6">
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="mb-16"
           >
-            <h2 className="mb-6 bg-gradient-to-r from-primary to-[#f5c034] bg-clip-text text-6xl font-bold text-transparent">
+            {/* <h2 className="mb-6 bg-gradient-to-r from-primary to-[#f5c034] bg-clip-text text-6xl font-bold text-transparent">
               404
-            </h2>
-            <h3 className="text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
+            </h2> */}
+            <h3 className="text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300">
               Bientôt disponible
             </h3>
             {/* <p className="mb-8 text-xl text-gray-600 dark:text-gray-400">
@@ -102,7 +103,7 @@ const PageNotFound = () => {
           </motion.div> */}
 
           {/* Image Slider */}
-          <div className="relative mt-12">
+          <div className="relative">
             <div className="flex flex-wrap justify-center gap-6">
               {imageData.map((item, index) => (
                 <motion.div
@@ -148,6 +149,9 @@ const PageNotFound = () => {
               ))}
             </div>
           </div>
+          
+          {/* Espace en bas pour équilibrer avec l'espace en haut */}
+          <div className="h-16"></div>
 
           {/* Decorative Elements */}
           <div className="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden">

@@ -1,188 +1,204 @@
 "use client"
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react"
 import { RxAccessibility } from "react-icons/rx"
 import Link from "next/link"
 import "swiper/css"
 import "swiper/css/navigation"
-import "swiper/css/free-mode"
+import "swiper/css/effect-coverflow"
 
 import { motion } from "framer-motion"
-import { FreeMode, Navigation, Autoplay } from "swiper/modules"
+import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules"
 import { RxArrowTopRight } from "react-icons/rx"
 import { useRef } from "react"
 
 const NosIntegrations = () => {
+  const swiperRef = useRef(null);
+
   return (
-    <section className="relative py-16 md:py-20 lg:py-24">
+    <section className="relative py-16 md:py-20 lg:py-24 bg-[#1a3654] dark:bg-[#1a3654] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-14 max-w-[600px] text-center">
           <motion.h2
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 20, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5 }}
-            className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]"
+            className="font-Title mb-4 text-center text-3xl font-bold !leading-tight text-white sm:text-4xl md:text-[45px]"
           >
             Ce que nous intégrons
           </motion.h2>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative mx-auto max-w-screen"
+          className="relative mx-auto"
         >
-          <Swiper
-            breakpoints={{
-              340: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            }}
-            centeredSlides={true}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            navigation={{
-              prevEl: '.custom-prev',
-              nextEl: '.custom-next',
-            }}
-            modules={[Navigation, Autoplay]}
-            className="relative mx-auto w-full"
-          >
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url("/images/integration/1-Cloud_Integration.PNG")`,
-                  }}
-                />
-                <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                <div className="relative flex flex-col gap-3">
-                  <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                  {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                  <p className="lg:text-[18px]">Cloud</p>
-                </div>
-                <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <Link href="/notreexpertise/integration">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url("/images/integration/2-Datacenter_Integration.jpg")`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                  <div className="relative flex flex-col gap-3">
-                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Data center</p>
+          <div className="px-6 md:px-12 lg:px-16 relative">
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={"auto"}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 250,
+                modifier: 3,
+                slideShadows: false,
+              }}
+              initialSlide={2}
+              loop={true}
+              speed={800}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              navigation={{
+                prevEl: '.custom-prev-btn',
+                nextEl: '.custom-next-btn',
+              }}
+              modules={[EffectCoverflow, Navigation, Autoplay]}
+              className="integration-swiper"
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+            >
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/reseau.jpg")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Réseau</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
                   </div>
-                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <Link href="/notreexpertise/integration">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url("/images/integration/reseau.jpg")`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                  <div className="relative flex flex-col gap-3">
-                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Réseau</p>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/serveur-stockage.jpg")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Serveurs et stockage</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
                   </div>
-                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <Link href="/notreexpertise/integration">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url("/images/integration/3-Securité_Integration.PNG")`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                  <div className="relative flex flex-col gap-3">
-                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Sécurité</p>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/1-Cloud_Integration.PNG")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Cloud</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
                   </div>
-                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <Link href="/notreexpertise/integration">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url("/images/integration/Infrastructure-Sys-Intregation.jpg")`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                  <div className="relative flex flex-col gap-3">
-                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Infrastructure système</p>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/2-Datacenter_Integration.jpg")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Data center</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
                   </div>
-                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="group relative mb-20 flex h-[250px] w-[215px] cursor-pointer flex-col gap-6 overflow-hidden rounded-xl px-6 py-8 text-white shadow-lg lg:h-[400px] lg:w-[350px]">
-                <Link href="/notreexpertise/integration">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url("/images/integration/serveur-stockage.jpg")`,
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 group-hover:opacity-20" />
-                  <div className="relative flex flex-col gap-3">
-                    <RxAccessibility className="h-[32px] w-[32px] text-primary group-hover:text-blue-400" />
-                    {/* <h1 className="text-xl lg:text-2xl">Intégration</h1> */}
-                    <p className="lg:text-[18px]">Serveurs et stockage</p>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/3-Securité_Integration.PNG")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Sécurité</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
                   </div>
-                  <RxArrowTopRight className="absolute bottom-5 left-5 h-[35px] w-[35px] text-white duration-100 group-hover:rotate-45 group-hover:text-primary" />
                 </Link>
-              </div>
-            </SwiperSlide>
-            <button className="custom-prev absolute left-0 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-full bg-primary/30 text-white transition-all hover:bg-primary hover:text-white md:left-4 lg:left-10">
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide-custom">
+                <Link href="/notreexpertise/integration" className="block w-full h-full">
+                  <div className="group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl text-white shadow-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url("/images/integration/Infrastructure-Sys-Intregation.jpg")`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <RxAccessibility className="h-[28px] w-[28px] text-[#5bbfea]" />
+                        <p className="text-[18px] font-medium">Infrastructure système</p>
+                      </div>
+                      <RxArrowTopRight className="h-[30px] w-[30px] text-white duration-100 group-hover:rotate-45 group-hover:text-[#5bbfea]" />
+                    </div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            </Swiper>
+            <button 
+              className="custom-prev-btn absolute left-0 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 transform items-center justify-center rounded-full bg-[#5bbfea]/30 text-white transition-all hover:bg-[#5bbfea] hover:text-white md:h-12 md:w-12 md:left-2 lg:left-24"
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={3}
                 stroke="currentColor"
-                className="h-6 w-6"
+                className="h-5 w-5 md:h-6 md:w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -191,14 +207,17 @@ const NosIntegrations = () => {
                 />
               </svg>
             </button>
-            <button className="custom-next absolute right-0 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-full bg-primary/30 text-white transition-all hover:bg-primary hover:text-white md:right-4 lg:right-10">
+            <button 
+              className="custom-next-btn absolute right-0 top-1/2 z-40 flex h-10 w-10 -translate-y-1/2 transform items-center justify-center rounded-full bg-[#5bbfea]/30 text-white transition-all hover:bg-[#5bbfea] hover:text-white md:h-12 md:w-12 md:right-2 lg:right-24"
+              onClick={() => swiperRef.current?.slideNext()}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={3}
                 stroke="currentColor"
-                className="h-6 w-6"
+                className="h-5 w-5 md:h-6 md:w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -207,74 +226,70 @@ const NosIntegrations = () => {
                 />
               </svg>
             </button>
-          </Swiper>
+          </div>
         </motion.div>
       </div>
 
       <style jsx global>{`
-        .swiper-wrapper {
-          align-items: center;
-          padding: 40px 0;
+        .integration-swiper {
+          width: 100%;
+          padding: 50px 0;
+          overflow: hidden;
         }
         
-        .swiper-slide {
-          transition: all 0.5s ease;
-          opacity: 0.4;
-          transform: scale(0.65);
+        .swiper-slide-custom {
+          width: 340px;
+          height: 340px;
+          background-position: center;
+          background-size: cover;
+          transition: all 0.3s ease;
+          opacity: 0.6;
+          filter: blur(1px);
         }
         
         .swiper-slide-active {
-          transform: scale(1.2) !important;
-          opacity: 1 !important;
-          z-index: 20;
+          opacity: 1;
+          transform: scale(1.35);
+          z-index: 10;
+          filter: blur(0);
         }
         
         .swiper-slide-active .group {
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
-
+        
         .swiper-slide-prev,
         .swiper-slide-next {
-          transform: scale(0.8);
-          opacity: 0.6;
-          z-index: 10;
+          opacity: 0.8;
+          filter: blur(0);
         }
-
-        .swiper {
-          overflow: hidden;
-          padding: 0 40px;
-          margin: 0 auto;
+        
+        @media (min-width: 768px) {
+          .swiper-slide-custom {
+            width: 380px;
+            height: 380px;
+          }
+          
+          .swiper-slide-active {
+            transform: scale(1.4);
+          }
         }
-
+        
+        @media (min-width: 1024px) {
+          .swiper-slide-custom {
+            width: 400px;
+            height: 400px;
+          }
+          
+          .swiper-slide-active {
+            transform: scale(1.45);
+          }
+        }
+        
         /* Masquer les boutons de navigation par défaut de Swiper */
         .swiper-button-prev,
         .swiper-button-next {
           display: none;
-        }
-
-        @media (max-width: 768px) {
-          .swiper {
-            padding: 0 20px;
-          }
-          
-          .swiper-slide {
-            max-width: 280px;
-            margin: 0 auto;
-          }
-          
-          .swiper-slide-active {
-            transform: scale(1.1) !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .swiper-slide {
-            max-width: 240px;
-          }
-          
-          .swiper-slide-active {
-            transform: scale(1.05) !important;
-          }
         }
       `}</style>
     </section>
